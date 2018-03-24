@@ -7,29 +7,29 @@
 			  <ul class="thumbnails">
 				<li class="span3">
 				<div class="thumbnail">
-					<a class="zoomTool" href="index.php?view=products-details" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+					<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 					<a href="#" class="tag"></a>
-					<a href="index.php?view=products-details"><img src="assets/img/bootstrap-ring.png" alt="bootstrap-ring"></a>
+					<a href="product_details.html"><img src="assets/img/bootstrap-ring.png" alt="bootstrap-ring"></a>
 				</div>
 				</li>
 				<li class="span3">
 				  <div class="thumbnail">
-					<a class="zoomTool" href="index.php?view=products-details" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+					<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 					<a href="#" class="tag"></a>
-					<a  href="index.php?view=products-details"><img src="assets/img/i.jpg" alt=""></a>
+					<a  href="product_details.html"><img src="assets/img/i.jpg" alt=""></a>
 				  </div>
 				</li>
 				<li class="span3">
 				  <div class="thumbnail">
-					<a class="zoomTool" href="index.php?view=products-details" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+					<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 					<a href="#" class="tag"></a>
-					<a  href="index.php?view=products-details"><img src="assets/img/g.jpg" alt=""></a>
+					<a  href="product_details.html"><img src="assets/img/g.jpg" alt=""></a>
 				  </div>
 				</li>
 				<li class="span3">
 				  <div class="thumbnail">
-					<a class="zoomTool" href="index.php?view=products-details" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-					<a  href="index.php?view=products-details"><img src="assets/img/s.png" alt=""></a>
+					<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+					<a  href="product_details.html"><img src="assets/img/s.png" alt=""></a>
 				  </div>
 				</li>
 			  </ul>
@@ -38,26 +38,26 @@
 		  <ul class="thumbnails">
 			<li class="span3">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="index.php?view=products-details" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="index.php?view=products-details"><img src="assets/img/i.jpg" alt=""></a>
+				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<a  href="product_details.html"><img src="assets/img/i.jpg" alt=""></a>
 			  </div>
 			</li>
 			<li class="span3">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="index.php?view=products-details" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="index.php?view=products-details"><img src="assets/img/f.jpg" alt=""></a>
+				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<a  href="product_details.html"><img src="assets/img/f.jpg" alt=""></a>
 			  </div>
 			</li>
 			<li class="span3">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="index.php?view=products-details" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="index.php?view=products-details"><img src="assets/img/h.jpg" alt=""></a>
+				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<a  href="product_details.html"><img src="assets/img/h.jpg" alt=""></a>
 			  </div>
 			</li>
 			<li class="span3">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="index.php?view=products-details" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="index.php?view=products-details"><img src="assets/img/j.jpg" alt=""></a>
+				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<a  href="product_details.html"><img src="assets/img/j.jpg" alt=""></a>
 			  </div>
 			</li>
 		  </ul>
