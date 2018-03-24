@@ -38,7 +38,7 @@
             </div>
             <?php include('modules/footer.php'); ?>
         </div>
-        <?php  include('modules/copyright.php'); ?>
+        <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
         <script src="assets/js/jquery.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.easing-1.3.min.js"></script>
