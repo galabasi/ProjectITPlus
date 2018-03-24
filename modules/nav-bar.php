@@ -11,12 +11,13 @@
 				 	<li class="active"><a href="index.php">Trang chủ</a></li>
 				 	<li class=""><a href="index.php?view=shop">Cửa hàng</a></li>
 					<li class=""><a href="index.php?view=contact">Liên hệ với chúng tôi</a></li>
-				 	<li class=""><a href="index.php?view=register">Đăng ký</a></li>
+				 	<!-- <li class=""><a href="index.php?view=register">Đăng ký</a></li> -->
 				</ul>
 				<form action="#" class="navbar-search pull-left">
 				 	<input type="text" placeholder="Tìm kiếm" class="search-query span2">
 				</form>
 				<ul class="nav pull-right">
+					<li><a  class="" href="index.php?view=register"><span class="icon-user"></span> Đăng ký </a></li>
 					<li class="dropdown">
 						<a  class="" href="index.php?view=login"><span class="icon-lock"></span> Đăng nhập </a>
 						
