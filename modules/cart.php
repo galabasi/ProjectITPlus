@@ -1,8 +1,8 @@
 <div class="row">
 	<div class="span12">
 		<ul class="breadcrumb">
-			<li><a href="index.html">Home</a> <span class="divider">/</span></li>
-			<li class="active">Check Out</li>
+			<li><a href="index.php">Trang chủ</a> <span class="divider">/</span></li>
+			<li class="active">Giỏ hàng</li>
 		</ul>
 		<div class="well well-small">
 			<h1>Check Out <small class="pull-right"> 2 Items are in the cart </small></h1>

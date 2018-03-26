@@ -1,9 +1,10 @@
 body{background-color:#eee8aa; }
-#header{padding:8px 0 8px;}
+/*#header{padding:8px 0 8px;}*/
 #header a{text-decoration:none}
 #header p{padding:0; margin:0; line-height:1em; font-size:100%}
 #header h1{margin:0;line-height:1em }
 #header h1.dotmark{line-height:1.5em;}
+#header{ padding-top:0px;}
 
 .logo {padding-top: 11px;display: block;}
 .logo span{display:none}
@@ -87,7 +88,7 @@ hr.soften {margin: 8px 0;background: #DDD;}
 .thumbnail h5,.thumbnail p{text-align:center}
 .bs-docs-sidenav > li > a {border: 0; border-bottom:1px solid #e5e5e5;}
 .thumbnail{position:relative;}
-.tag {background:url(assets/img/new.png) no-repeat 0 0; position: absolute; display:block; top: -4px;right: -18px; height:48px; width:48px;}
+.tag {background:url(../img/new.png) no-repeat 0 0; position: absolute; display:block; top: -4px;right: -18px; height:48px; width:48px;}
 .np{padding:0}
 .totalInCart{line-height:26px;}
 .absoluteBlk{position:absolute; left:8px; top:8px; width:45%; }
@@ -108,3 +109,5 @@ hr.soften {margin: 8px 0;background: #DDD;}
 .gotop:hover {color: #fff;text-decoration: none;-moz-border-radius: 10px;-webkit-border-radius: 10px;border-radius: 10px;}
 #gototop{margin-top:1px;}
 #footerMenu a{ font-size:12px; text-transform:lowercase}
+.navbar{margin: 5px 0px 10px;}
+#btn-search{margin: 0px;}

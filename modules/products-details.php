@@ -1,8 +1,8 @@
 <div class="span9">
 	<ul class="breadcrumb">
-		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
-		<li><a href="products.html">Items</a> <span class="divider">/</span></li>
-		<li class="active">Preview</li>
+		<li><a href="index.php">Trang chủ</a> <span class="divider">/</span></li>
+		<li><a href="products.html">Sản phẩm</a> <span class="divider">/</span></li>
+		<li class="active">Xem hàng</li>
 	</ul>	
 	<div class="well well-small">
 		<div class="row-fluid">
@@ -98,3 +98,5 @@
 
 				</div>
 			</div>
+		</div>
+	</div>
