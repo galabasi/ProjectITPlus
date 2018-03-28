@@ -14,6 +14,14 @@
         <!-- font awesome styles -->
         <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
         <link rel="shortcut icon" href="assets/ico/favicon.ico">
+        <!-- hàm php lấy view để set active cho các nút trong nav-bar-->
+        <?php
+            if(isset($_GET['view'])){
+                $view = $_GET['view'];
+            } else {
+                $view = "";
+            }
+        ?>
     </head>
     <body>
         <div class="container">

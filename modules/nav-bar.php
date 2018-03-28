@@ -8,9 +8,9 @@
 			 </a>
 		  <div class="nav-collapse">
 				<ul class="nav">
-				 	<li class="active"><a href="index.php">Trang chủ</a></li>
-				 	<li class=""><a href="index.php?view=shop">Cửa hàng</a></li>
-					<li class=""><a href="index.php?view=contact">Liên hệ với chúng tôi</a></li>
+				 	<li class="<?php if($view == "") echo "active" ?>"><a href="index.php">Trang chủ</a></li>
+				 	<li class="<?php if($view == "shop") echo "active" ?>"><a href="index.php?view=shop">Cửa hàng</a></li>
+					<li class="<?php if($view == "contact") echo "active" ?>"><a href="index.php?view=contact">Liên hệ với chúng tôi</a></li>
 				</ul>
 				<form action="#" class="navbar-search pull-left">
 				 	<input type="text" placeholder="Tìm kiếm" class="search-query span2" autofocus="true">
