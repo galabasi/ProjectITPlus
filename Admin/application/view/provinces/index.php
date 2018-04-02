@@ -27,7 +27,7 @@
                    <td><?php if (isset($province->id_province)) echo htmlspecialchars($province->id_province, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($province->name_province)) echo htmlspecialchars($province->name_province, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($province->status)) echo htmlspecialchars($province->status, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td width="110px">
+                    <td>
                         <a href="<?php echo "index.php?view=editProvince&province_id=".$row["province_id"] ?>" class="btn btn-primary btn-xs">Edit</a>
                         <button class="btn btn-danger btn-xs" onclick="delete1(<?php echo $row["province_id"] ?>);">Delete</button>
                       
