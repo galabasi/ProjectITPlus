@@ -48,8 +48,8 @@
                   <td><?php if (isset($user->status)) echo htmlspecialchars($user->status, ENT_QUOTES, 'UTF-8'); ?></td>
                   <td><?php if (isset($user->role)) echo htmlspecialchars($user->role, ENT_QUOTES, 'UTF-8'); ?></td>
                   <td>
-                    <a href="<?php echo URL . 'users/edituser/' . htmlspecialchars($user->id_user, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-block btn-primary btn-xs">Edit</a>
-                    <button class="btn btn-block btn-danger btn-xs" onclick="delete1(<?php echo $rowUser["user_id"] ?>);">Delete</button>
+                    <a href="<?php echo URL . 'users/edituser/' . htmlspecialchars($user->id_user, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Edit</a>
+                    <button class="btn btn-danger btn-xs" onclick="cfdelete(<?php echo htmlspecialchars($user->id_user, ENT_QUOTES, 'UTF-8') ?>);">Delete</button>
                   </td>
                 </tr> 
                 <?php
@@ -62,11 +62,3 @@
     </div>
   </div>
 </div>
-  <script>
-    function delete1(id){
-      if (confirm("Bạn có chắc chắn muốn xóa không?")) {
-        window.location.href="index.php?view=deleteUser&user_id="+id;
-      }
-      // window.location.href="index.php?view=listUser";
-    }
-  </script>

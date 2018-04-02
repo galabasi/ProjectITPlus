@@ -24,6 +24,10 @@ body {
   overflow-y: auto;
 }
 /* Layout */
+
+.content > div {
+  overflow-x: auto;
+}
 .wrapper {
   height: 100%;
   position: relative;
@@ -1534,6 +1538,7 @@ a:focus {
   margin-bottom: 20px;
   width: 100%;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  overflow: auto;
 }
 .box.box-primary {
   border-top-color: #3c8dbc;

@@ -27,6 +27,58 @@ class Users extends Controller
         require APP . 'view/users/index.php';
         require APP . 'view/_templates/footer.php';
     }
+
+    public function addUser()
+    {
+        $this->setAndPOST();
+        $provinces = $this->model->getList("tbl_province");
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/users/add.php';
+        require APP . 'view/_templates/footer.php';
+
+    }
+
+    public function setAndPOST(){
+        if(isset($_POST["addNew"])){
+            $_POST['password'] = md5($_POST["password"]);
+            $temTime = strtotime($_POST["birthday"]);
+            $_POST["birthday"] = date("Y-m-d",$temTime);
+            // print_r($_POST);
+            $this->model->addNew($this->table_name, $_POST);
+            header('location: ' . URL . 'users/index');
+        }
+    }
+
+    public function getDistrict(){
+?>
+        <option value="">---Chọn---</option>
+<?php
+            if (isset($_POST["id"])) {
+                $id=$_POST["id"];
+                $districts = $this->model->getListById("tbl_district", "id_province", $id);
+                foreach ($districts as $district) {
+?>
+                <option value="<?php echo htmlspecialchars($district->id_district, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($district->name_district, ENT_QUOTES, 'UTF-8'); ?></option>
+<?php       
+            }       
+        }
+    }
+
+
+    public function getWard(){
+?>
+        <option value="">---Chọn---</option>
+<?php
+            if (isset($_POST["id"])) {
+                $id=$_POST["id"];
+                $wards = $this->model->getListById("tbl_ward", "id_district", $id);
+                foreach ($wards as $ward) {
+?>
+                <option value="<?php echo htmlspecialchars($ward->id_ward, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($ward->name_ward, ENT_QUOTES, 'UTF-8'); ?></option>
+<?php       
+            }       
+        }
+    }    
 //______________________________________________________________________________
     /**
      * ACTION: addSong
@@ -128,12 +180,7 @@ class Users extends Controller
 //______________________________________________________________________________
 
 //______________________________________________________________________________
-    public function addUser()
-    {
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/users/add.php';
-        require APP . 'view/_templates/footer.php';
-    }
+
 //______________________________________________________________________________
 
 
