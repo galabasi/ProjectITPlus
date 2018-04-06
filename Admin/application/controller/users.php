@@ -12,7 +12,7 @@
 class Users extends Controller
 {   
     protected $table_name = "tbl_user";
-    protected $key = "id_user";
+    protected $key_word = "id_user";
     /**
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/songs/index
@@ -30,7 +30,7 @@ class Users extends Controller
 
     public function addUser()
     {
-        $this->setAndPOST();
+        $this->setAdd();
         $provinces = $this->model->getList("tbl_province");
         require APP . 'view/_templates/header.php';
         require APP . 'view/users/add.php';
@@ -38,27 +38,68 @@ class Users extends Controller
 
     }
 
-    public function setAndPOST(){
+    public function setAdd(){
         if(isset($_POST["addNew"])){
             $_POST['password'] = md5($_POST["password"]);
             $temTime = strtotime($_POST["birthday"]);
             $_POST["birthday"] = date("Y-m-d",$temTime);
-            // print_r($_POST);
             $this->model->addNew($this->table_name, $_POST);
             header('location: ' . URL . 'users/index');
         }
     }
 
+    public function editUser($id)
+    {
+        if (isset($id)) {
+            $user = $this->model->getListById($this->table_name, $this->key_word, $id);
+            $provinces = $this->model->getList("tbl_province");
+
+            $temTime = strtotime($user[0]->birthday);
+            $user[0]->birthday = date("d-m-Y",$temTime);
+
+            $this->setEdit($id);
+            require APP . 'view/_templates/header.php';
+            require APP . 'view/users/edit.php';
+            require APP . 'view/_templates/footer.php';
+        } else {
+            header('location: ' . URL . 'users/index');
+        }
+    }
+
+    public function setEdit($id){
+        if(isset($_POST["updateList"])){
+            $_POST['password'] = md5($_POST["password"]);
+            $temTime = strtotime($_POST["birthday"]);
+            $_POST["birthday"] = date("Y-m-d",$temTime);
+            $this->model->updateList($this->table_name, $this->key_word, $id, $_POST);
+            header('location: ' . URL . 'users/index');
+        }
+    }    
+    public function deleteUser($id)
+    {
+        if (isset($id)) {
+            $this->model->deleteById($this->table_name, $this->key_word, $id);
+        }
+
+        header('location: ' . URL . 'users/index');
+    }
+
+
     public function getDistrict(){
 ?>
         <option value="">---Chọn---</option>
 <?php
-            if (isset($_POST["id"])) {
+            if (isset($_POST["id"]) && isset($_POST["tmp"])) {
                 $id=$_POST["id"];
+                $tmp = $_POST["tmp"];
                 $districts = $this->model->getListById("tbl_district", "id_province", $id);
                 foreach ($districts as $district) {
+                    $selected = "";
+                    if($district->id_district == $tmp){
+                        $selected = "selected";
+                    }
 ?>
-                <option value="<?php echo htmlspecialchars($district->id_district, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($district->name_district, ENT_QUOTES, 'UTF-8'); ?></option>
+                <option <?php echo $selected ?> value="<?php echo htmlspecialchars($district->id_district, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($district->name_district, ENT_QUOTES, 'UTF-8'); ?></option>
 <?php       
             }       
         }
@@ -69,16 +110,23 @@ class Users extends Controller
 ?>
         <option value="">---Chọn---</option>
 <?php
-            if (isset($_POST["id"])) {
+            if (isset($_POST["id"]) && isset($_POST["tmp"])) {
                 $id=$_POST["id"];
+                $tmp = $_POST["tmp"];
                 $wards = $this->model->getListById("tbl_ward", "id_district", $id);
                 foreach ($wards as $ward) {
+                    $selected = "";
+                    if($ward->id_ward == $tmp){
+                        $selected = "selected";
+                    }
 ?>
-                <option value="<?php echo htmlspecialchars($ward->id_ward, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($ward->name_ward, ENT_QUOTES, 'UTF-8'); ?></option>
+                <option <?php echo $selected ?> value="<?php echo htmlspecialchars($ward->id_ward, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($ward->name_ward, ENT_QUOTES, 'UTF-8'); ?></option>
 <?php       
             }       
         }
     }    
+
+
 //______________________________________________________________________________
     /**
      * ACTION: addSong
@@ -157,31 +205,5 @@ class Users extends Controller
         // simply echo out something. A supersimple API would be possible by echoing JSON here
         echo $amount_of_songs;
     }
-//______________________________________________________________________________
-    public function editUser($user_id)
-    {
-        // if we have an id of a song that  should be edited
-        if (isset($user_id)) {
-            // do getSong() in model/model.php
-            $user = $this->model->getUser($user_id);
-
-            // in a real application we would also check if this db entry exists and therefore show the result or
-            // redirect the user to an error page or similar
-
-            // load views. within the views we can echo out $song easily
-            require APP . 'view/_templates/header.php';
-            require APP . 'view/users/edit.php';
-            require APP . 'view/_templates/footer.php';
-        } else {
-            // redirect user to songs index page (as we don't have a song_id)
-            header('location: ' . URL . 'users/index');
-        }
-    }
-//______________________________________________________________________________
-
-//______________________________________________________________________________
-
-//______________________________________________________________________________
-
 
 }

@@ -4,35 +4,45 @@
       include("main-footer.php");
    ?>
   </div>
-  <script src="<?php echo URL; ?>bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="<?php echo URL; ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="<?php echo URL; ?>dist/js/adminlte.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>jquery-ui/jquery-ui.css">
-  <script src="<?php echo URL; ?>jquery-ui/jquery-ui.js"></script>
-  <script src="<?php echo URL; ?><?php echo URL; ?>tinymce/tinymce.min.js"></script>
-  <script src="<?php echo URL; ?>js/main.js"></script>
-  <script>
-    function cfdelete(id){
-      if (confirm("Bạn có chắc chắn muốn xóa không?")) {
-        window.location.href="<?php echo URL . 'songs/deletesong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>";
-      }
+
+<script src="<?php echo URL; ?>bower_components/jquery/dist/jquery.min.js"></script>
+<script src="<?php echo URL; ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="<?php echo URL; ?>dist/js/adminlte.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>jquery-ui/jquery-ui.css">
+<script src="<?php echo URL; ?>jquery-ui/jquery-ui.js"></script>
+<script src="<?php echo URL; ?><?php echo URL; ?>tinymce/tinymce.min.js"></script>
+<script src="<?php echo URL; ?>js/main.js"></script>
+<script>  
+  function cfdelete(id){
+    if (confirm("Bạn có chắc chắn muốn xóa không?")) {
+      window.location.href="<?php echo URL . 'users/deleteUser/'?>"+id;
     }
-  </script>  
-<script>
-  function getDistrict(id){
+  }
+  function getDistrict(id, tmp){
     $("#ward_user").html('<option value="">---Chọn---</option>');
-    $.post("getdistrict", {'id':id}, function(data) {
+    $.post("<?php echo URL."users/" ?>getdistrict", {'id':id, 'tmp':tmp}, function(data) {
       /*optional stuff to do after success */
       $("#district_user").html(data);
     });
   }
-  function getWard(id){
-    $.post('getward', {'id':id}, function(data) {
+  function getWard(id, tmp){
+    $.post('<?php echo URL."users/" ?>getward', {'id':id, 'tmp':tmp}, function(data) {
       /*optional stuff to do after success */
       $("#ward_user").html(data);
     });
   }
-  $(document).ready(function() {
+</script>
+  <script>
+        var myFunc = function() {
+      if($("#province_user").val() != ""){
+        getDistrict($("#province_user").val(), <?php echo $user[0]->district_user ?>);
+      }
+    }();
+  </script>
+
+<script>
+    $(document).ready(function() {
+
     $("#birthday").datepicker({
       autoSize: true,
       changeMonth: true,
@@ -49,6 +59,16 @@
       firstDay: 1
     }) ;
   });
+</script>
+
+<script>
+  $(document).ready(function() {
+      var myFunc2 = function() {
+      if($("#district_user").val() != ""){
+        getWard($("#district_user").val(), <?php echo $user[0]->ward_user ?>);
+      }
+    }();
+    });
 </script>
 </body>
 </html>

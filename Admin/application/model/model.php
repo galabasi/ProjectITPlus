@@ -27,6 +27,14 @@ class Model
         return $query->fetchAll();
     }
 
+    public function getListById($table, $key_word, $id)
+    {
+        $sql = "SELECT * FROM $table WHERE $key_word = $id";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();
+    }
+
     public function addNew($table, $data){
         if(is_array($data)){
             $field="";
@@ -49,14 +57,40 @@ class Model
             $query->execute();
         }
     }
-
-    public function getListById($table, $key, $id)
-    {
-        $sql = "SELECT * FROM $table WHERE `status` = 1 AND $key = $id";
+    public function updateList($table, $key_word, $id, $data){
+        if(is_array($data)){
+            $val = "";
+            $i = 0;
+            // $tmp = 1;
+            foreach ($data as $key => $value) {
+                if($key != "updateList"){
+                    $i++;
+                    // if($key == "status"){
+                    //     $tmp = 0;
+                    // }
+                    if($i == 1){
+                        $val .= $key." = '".$value."'";
+                    } else{
+                        $val .= ", ".$key." = '".$value."'";
+                    }
+                }
+            }
+            // if($tmp == 1){
+            //     $val .= ", status = '0'";
+            // }
+        }
+        $sql = "UPDATE $table";
+        $sql .= " SET ".$val;
+        $sql .= " WHERE ".$key_word."= ".$id;
         $query = $this->db->prepare($sql);
         $query->execute();
-        return $query->fetchAll();
-    }    
+    }
+    public function deleteById($table, $key_word, $id)
+    {
+        $sql = "DELETE FROM $table WHERE $key_word = $id";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+    }
 
  //_____________________________________________________  
     public function addSong($artist, $track, $link)

@@ -1,32 +1,3 @@
-<!-- <?php  
-  $sqlProvince="SELECT * FROM tbl_province";
-  $resultProvince=mysqli_query($conn,$sqlProvince);
-  if(isset($_POST["addNew"])){
-      $user_name = $_POST["user_name"];
-      $email = $_POST["email"];
-      $password = md5($_POST["password"]);
-      $gender = $_POST["gender"];
-      $phone = $_POST["phone"];
-      //chuyển từ ngày tháng năm hoăc năm tháng ngày => số nguyên tương tứng
-      $temTime = strtotime($_POST["birthday"]);//06-01-2018=>8654564765
-      $birthday = date("Y-m-d",$temTime) ;
-      $address = $_POST["address"];
-      $province_id = $_POST["province_id"];
-      $district_id = $_POST["district_id"];
-      $ward_id = $_POST["ward_id"];
-      $sqlInsert = "INSERT INTO tbl_users (user_name,email,`password`,gender,phone,birthday,address,province_id,district_id,ward_id)";
-      $sqlInsert .= " VALUES('$user_name','$email','$password','$gender','$phone','$birthday','$address','$province_id','$district_id','$ward_id')";
-      $result = @mysqli_query($conn,$sqlInsert) or die("Lỗi truy vấn :".$sqlInsert);
-      header("Location:index.php?view=listUser");
-  }      
-
-?> -->
-
-<?php
-  if(isset($_REQUEST['name_user'])){
-    echo "GG";
-  }
-?>
 <div class="row">
   <div class="col-md-6">
     <div class="box box-info">
@@ -81,7 +52,7 @@
           <div class="form-group">
             <label for="province" class="col-sm-2 control-label">province</label>
             <div class="col-sm-5">
-                <select class="form-control" id="province_user" name="province_user" onchange="getDistrict(this.value)" required = "true">
+                <select class="form-control" id="province_user" name="province_user" onchange="getDistrict(this.value, 0)" required = "true">
                   <option value="">---Chọn---</option>
                 <?php  
                   foreach ($provinces as $province) {
@@ -96,7 +67,7 @@
           <div class="form-group">
             <label for="district_id" class="col-sm-2 control-label">district</label>
             <div class="col-sm-5">
-              <select class="form-control" id="district_user" name="district_user" onchange="getWard(this.value)"  required = "true">
+              <select class="form-control" id="district_user" name="district_user" onchange="getWard(this.value, 0)"  required = "true">
                  <option value="">---Chọn---</option>
               </select>
             </div>
