@@ -61,7 +61,7 @@
             </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="index.php?view=listWard">List Ward</a></li>
+          <li><a href="<?php echo URL; ?>wards">List Ward</a></li>
           <li><a href="index.php?view=addWard">Add Ward</a></li>
         </ul>
       </li>
@@ -72,7 +72,7 @@
             </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="index.php?view=listProduct">List Product</a></li>
+          <li><a href="<?php echo URL; ?>products">List Product</a></li>
           <li><a href="index.php?view=addProduct">Add Product</a></li>
         </ul>
       </li>
@@ -116,7 +116,7 @@
             </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="index.php?view=listCategory">List Category</a></li>
+          <li><a href="<?php echo URL; ?>categorys">List Category</a></li>
           <li><a href="index.php?view=addCategory">Add Category</a></li>
         </ul>
       </li>
