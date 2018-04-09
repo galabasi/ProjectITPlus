@@ -19,9 +19,7 @@
             </thead>
             <tbody>
                 <?php  
-                  // $i=0;
                   foreach ($provinces as $province) {
-                    // $i++;
                 ?>
                  <tr>
                    <td><?php if (isset($province->id_province)) echo htmlspecialchars($province->id_province, ENT_QUOTES, 'UTF-8'); ?></td>
@@ -44,11 +42,3 @@
     </div>
   </div>
 </div>
-<script>
-  function delete1(id){
-    if (confirm("Bạn có chắc chắn muốn xóa không?")) {
-      window.location.href="index.php?view=deleteprovince&province_id="+id;
-    }
-      // window.location.href="index.php?view=listUser";
-    }
-</script>

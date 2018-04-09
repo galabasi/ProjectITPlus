@@ -50,7 +50,7 @@
             </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="index.php?view=listDistrict">List District</a></li>
+          <li><a href="<?php echo URL; ?>districts">List District</a></li>
           <li><a href="index.php?view=addDistrict">Add District</a></li>
         </ul>
       </li>
