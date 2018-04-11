@@ -96,6 +96,11 @@
               <input type="password" class="span3" name="password" id= "password" placeholder="Mật khẩu">
             </div>
           </div>
+          <?php 
+            if($a=="0"){
+          ?>
+          <span style="color: red">Sai thông tin đăng nhập</span>
+          <?php } ?>
           <div class="control-group">
             <div class="controls">
               <button type="submit" class="defaultBtn" name="login" id="login" >Đăng nhập</button> <a href="#">Quên mật khẩu?</a>

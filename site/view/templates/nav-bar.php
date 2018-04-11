@@ -17,10 +17,15 @@
 				 	<input type="button" value="Tìm kiếm" class="btn-search btn" id="btn-search">
 				</form>
 				<ul class="nav pull-right">
-					<li><a  class="" href="register"><span class="icon-user"></span> Đăng ký </a></li>
+					<li><a  href="register"><span class="icon-user"></span> Đăng ký </a></li>
 					<li class="dropdown">
-						<a  class="" href="login"><span class="icon-lock"></span> Đăng nhập </a>
-						
+						<?php 
+							if(!isset($_SESSION['user'])){
+						?>
+						<a  href="login"><span class="icon-lock"></span> Đăng nhập </a>
+						<?php }else {?>
+								<a  class="" href="logout"><span class="icon-lock"></span> Đăng xuất </a>
+							<?php } ?>
 					</li>
 				</ul>
 		  </div>
