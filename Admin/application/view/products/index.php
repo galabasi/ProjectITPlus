@@ -12,7 +12,12 @@
               <thead>
                <tr role="row">
                 <th>#</th>
-                <th>province_name</th>
+                <th>name_product</th>
+                <th>category</th>
+                <th>price</th>
+                <th>sale</th>
+                <th>brand</th>
+                <th>description</th>
                 <th>status</th>
                 <th>Action</th>
               </tr>
@@ -24,6 +29,11 @@
                  <tr>
                    <td><?php if (isset($product->id_product)) echo htmlspecialchars($product->id_product, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($product->name_product)) echo htmlspecialchars($product->name_product, ENT_QUOTES, 'UTF-8'); ?></td>
+                   <td><?php if (isset($product->id_category)) echo htmlspecialchars($product->id_category, ENT_QUOTES, 'UTF-8'); ?></td>
+                   <td><?php if (isset($product->price)) echo htmlspecialchars($product->price, ENT_QUOTES, 'UTF-8'); ?></td>
+                   <td><?php if (isset($product->sale)) echo htmlspecialchars($product->sale, ENT_QUOTES, 'UTF-8'); ?></td>
+                   <td><?php if (isset($product->id_brand)) echo htmlspecialchars($product->id_brand, ENT_QUOTES, 'UTF-8'); ?></td>
+                   <td><?php if (isset($product->description)) echo htmlspecialchars($product->description, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($product->status)) echo htmlspecialchars($product->status, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
                         <a href="<?php echo "index.php?view=editProvince&province_id=".$row["province_id"] ?>" class="btn btn-primary btn-xs">Edit</a>

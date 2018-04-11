@@ -12,7 +12,8 @@
               <thead>
                <tr role="row">
                 <th>#</th>
-                <th>province_name</th>
+                <th>ward_name</th>
+                <th>district_name</th>
                 <th>status</th>
                 <th>Action</th>
               </tr>
@@ -24,6 +25,7 @@
                  <tr>
                    <td><?php if (isset($ward->id_ward)) echo htmlspecialchars($ward->id_ward, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($ward->name_ward)) echo htmlspecialchars($ward->name_ward, ENT_QUOTES, 'UTF-8'); ?></td>
+                   <td><?php if (isset($ward->id_district)) echo htmlspecialchars($ward->id_district, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($ward->status)) echo htmlspecialchars($ward->status, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
                         <a href="<?php echo "index.php?view=editProvince&province_id=".$row["province_id"] ?>" class="btn btn-primary btn-xs">Edit</a>
