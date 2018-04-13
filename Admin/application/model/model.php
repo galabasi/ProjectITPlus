@@ -53,7 +53,7 @@ class Model
                 }
             }
             $sql = "INSERT INTO ".$table." ($field) VALUES($val)";
-            echo $sql;
+            // echo $sql;
             $query = $this->db->prepare($sql);
             $query->execute();
         }

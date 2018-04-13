@@ -38,16 +38,16 @@ class Wards extends Controller
     public function setAdd(){
         if(isset($_POST["addNew"])){
             $this->model->addNew($this->table_name, $_POST);
-            // header('location: ' . URL . 'wards/index');
+            header('location: ' . URL . 'wards/index');
         }
     }
-    public function deleteDistrict($id)
+    public function deleteWard($id)
     {
         if (isset($id)) {
             $this->model->deleteById($this->table_name, $this->key_word, $id);
         }
 
-        header('location: ' . URL . 'districts/index');
+        header('location: ' . URL . 'wards/index');
     }
 }
 ?>

@@ -14,6 +14,7 @@
                 <th>#</th>
                 <th>ward_name</th>
                 <th>district_name</th>
+                <th>province_name</th>
                 <th>status</th>
                 <th>Action</th>
               </tr>
@@ -26,11 +27,11 @@
                    <td><?php if (isset($ward->id_ward)) echo htmlspecialchars($ward->id_ward, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($ward->name_ward)) echo htmlspecialchars($ward->name_ward, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($ward->id_district)) echo htmlspecialchars($ward->id_district, ENT_QUOTES, 'UTF-8'); ?></td>
+                   <td><?php if (isset($ward->id_province)) echo htmlspecialchars($ward->id_province, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($ward->status)) echo htmlspecialchars($ward->status, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
-                        <a href="<?php echo "index.php?view=editProvince&province_id=".$row["province_id"] ?>" class="btn btn-primary btn-xs">Edit</a>
-                        <button class="btn btn-danger btn-xs" onclick="delete1(<?php echo $row["province_id"] ?>);">Delete</button>
-                      
+                        <a href="<?php echo URL . 'wards/editward/' . htmlspecialchars($user->id_ward, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Edit</a>
+                        <button class="btn btn-danger btn-xs" onclick="cfdelete(<?php echo htmlspecialchars($ward->id_ward, ENT_QUOTES, 'UTF-8') ?>);">Delete</button>
                     </td>
                 </tr> 
                 <?php
@@ -44,3 +45,10 @@
     </div>
   </div>
 </div>
+<script>
+    function cfdelete(id){
+    if (confirm("Bạn có chắc chắn muốn xóa không?")) {
+      window.location.href="<?php echo URL . 'wards/deleteWard/'?>"+id;
+    }
+  }
+</script>
