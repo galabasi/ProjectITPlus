@@ -26,9 +26,9 @@
                     <td><?php if (isset($district->name_district)) echo htmlspecialchars($district->name_district, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($district->id_province)) echo htmlspecialchars($district->id_province, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($district->status)) echo htmlspecialchars($district->status, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td width="110px">
-                        <a href="<?php echo "index.php?view=editDistrict&district_id=".$row["district_id"] ?>" class="btn btn-primary btn-xs">Edit</a>
-                        <button class="btn btn-danger btn-xs" onclick="delete1(<?php echo $row["district_id"] ?>);">Delete</button>
+                    <td>
+                      <a href="<?php echo URL . 'districts/editdistrict/' . htmlspecialchars($district->id_district, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Edit</a>
+                      <button class="btn btn-danger btn-xs" onclick="cfdelete(<?php echo htmlspecialchars($district->id_district, ENT_QUOTES, 'UTF-8') ?>);">Delete</button>
                       
                     </td>
                 </tr> 
@@ -43,3 +43,10 @@
     </div>
   </div>
 </div>
+<script>
+    function cfdelete(id){
+    if (confirm("Bạn có chắc chắn muốn xóa không?")) {
+      window.location.href="<?php echo URL . 'districts/deleteDistrict/'?>"+id;
+    }
+  }
+</script>

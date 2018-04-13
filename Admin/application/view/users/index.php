@@ -62,3 +62,10 @@
     </div>
   </div>
 </div>
+<script>
+    function cfdelete(id){
+    if (confirm("Bạn có chắc chắn muốn xóa không?")) {
+      window.location.href="<?php echo URL . 'users/deleteUser/'?>"+id;
+    }
+  }
+</script>

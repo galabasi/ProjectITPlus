@@ -12,7 +12,7 @@
 class Categorys extends Controller
 {   
     protected $table_name = "tbl_category";
-    protected $key = "id_category";
+    protected $key_word = "id_category";
     /**
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/songs/index

@@ -12,7 +12,7 @@
 class Products extends Controller
 {   
     protected $table_name = "tbl_product";
-    protected $key = "id_product";
+    protected $key_word = "id_product";
     /**
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/songs/index

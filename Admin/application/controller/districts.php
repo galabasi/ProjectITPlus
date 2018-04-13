@@ -12,7 +12,7 @@
 class Districts extends Controller
 {   
     protected $table_name = "tbl_district";
-    protected $key = "id_district";
+    protected $key_word = "id_district";
     /**
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/songs/index
@@ -25,6 +25,29 @@ class Districts extends Controller
         require APP . 'view/_templates/header.php';
         require APP . 'view/districts/index.php';
         require APP . 'view/_templates/footer.php';
+    }
+    public function addDistrict()
+    {
+        $this->setAdd();
+        $provinces = $this->model->getList("tbl_province");
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/districts/add.php';
+        require APP . 'view/_templates/footer.php';
+
+    }
+    public function setAdd(){
+        if(isset($_POST["addNew"])){
+            $this->model->addNew($this->table_name, $_POST);
+            header('location: ' . URL . 'districts/index');
+        }
+    }
+    public function deleteDistrict($id)
+    {
+        if (isset($id)) {
+            $this->model->deleteById($this->table_name, $this->key_word, $id);
+        }
+
+        header('location: ' . URL . 'districts/index');
     }
 }
 ?>

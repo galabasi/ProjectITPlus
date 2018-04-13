@@ -12,7 +12,7 @@
 class Wards extends Controller
 {   
     protected $table_name = "tbl_ward";
-    protected $key = "id_ward";
+    protected $key_word = "id_ward";
     /**
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/songs/index
@@ -25,6 +25,29 @@ class Wards extends Controller
         require APP . 'view/_templates/header.php';
         require APP . 'view/wards/index.php';
         require APP . 'view/_templates/footer.php';
+    }
+    public function addWard()
+    {
+        $this->setAdd();
+        $provinces = $this->model->getList("tbl_province");
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/wards/add.php';
+        require APP . 'view/_templates/footer.php';
+
+    }
+    public function setAdd(){
+        if(isset($_POST["addNew"])){
+            $this->model->addNew($this->table_name, $_POST);
+            // header('location: ' . URL . 'wards/index');
+        }
+    }
+    public function deleteDistrict($id)
+    {
+        if (isset($id)) {
+            $this->model->deleteById($this->table_name, $this->key_word, $id);
+        }
+
+        header('location: ' . URL . 'districts/index');
     }
 }
 ?>

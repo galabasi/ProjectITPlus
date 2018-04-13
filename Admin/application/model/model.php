@@ -53,6 +53,7 @@ class Model
                 }
             }
             $sql = "INSERT INTO ".$table." ($field) VALUES($val)";
+            echo $sql;
             $query = $this->db->prepare($sql);
             $query->execute();
         }
@@ -88,6 +89,7 @@ class Model
     public function deleteById($table, $key_word, $id)
     {
         $sql = "DELETE FROM $table WHERE $key_word = $id";
+        // echo $sql;
         $query = $this->db->prepare($sql);
         $query->execute();
     }

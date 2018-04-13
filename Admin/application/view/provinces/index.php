@@ -26,9 +26,8 @@
                    <td><?php if (isset($province->name_province)) echo htmlspecialchars($province->name_province, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($province->status)) echo htmlspecialchars($province->status, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
-                        <a href="<?php echo "index.php?view=editProvince&province_id=".$row["province_id"] ?>" class="btn btn-primary btn-xs">Edit</a>
-                        <button class="btn btn-danger btn-xs" onclick="delete1(<?php echo $row["province_id"] ?>);">Delete</button>
-                      
+                      <a href="<?php echo URL . 'provinces/editprovince/' . htmlspecialchars($province->id_province, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Edit</a>
+                      <button class="btn btn-danger btn-xs" onclick="cfdelete(<?php echo htmlspecialchars($province->id_province, ENT_QUOTES, 'UTF-8') ?>);">Delete</button>
                     </td>
                 </tr> 
                 <?php
@@ -42,3 +41,10 @@
     </div>
   </div>
 </div>
+<script>
+    function cfdelete(id){
+    if (confirm("Bạn có chắc chắn muốn xóa không?")) {
+      window.location.href="<?php echo URL . 'provinces/deleteProvince/'?>"+id;
+    }
+  }
+</script>
