@@ -52,11 +52,11 @@ class Application
                     $this->url_controller->index();
                 }
                 else {
-                    header('location: ' . URL . 'problem');
+                    header('location: ' . URL . 'problem1');
                 }
             }
         } else {
-            header('location: ' . URL . 'problem');
+            header('location: ' . URL . 'problem2');
         }
     }
 

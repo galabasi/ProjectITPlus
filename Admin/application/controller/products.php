@@ -9,70 +9,73 @@
  * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
  *
  */
-class Provinces extends Controller
+class Products extends Controller
 {   
-    protected $table_name = "tbl_province";
-    protected $key_word = "id_province";
+    protected $table_name = "tbl_product";
+    protected $key_word = "id_product";
     /**
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/songs/index
      */
     public function index()
     {
-        $provinces = $this->model->getList($this->table_name);
+        $products = $this->model->getList($this->table_name);
 
        // load views. within the views we can echo out $songs and $amount_of_songs easily
         
         $this->model->sessionStart();
         require APP . 'view/_templates/header.php';
-        require APP . 'view/provinces/index.php';
+        require APP . 'view/products/index.php';
         require APP . 'view/_templates/footer.php';
     }
-
-    public function addProvince()
+    public function addProduct()
     {
         $this->setAdd();
+        $categorys = $this->model->getList("tbl_category");
+        $brands = $this->model->getList("tbl_brand");
         
         $this->model->sessionStart();
         require APP . 'view/_templates/header.php';
-        require APP . 'view/provinces/add.php';
+        require APP . 'view/products/add.php';
         require APP . 'view/_templates/footer.php';
 
     }
     public function setAdd(){
         if(isset($_POST["addNew"])){
             $this->model->addNew($this->table_name, $_POST);
-            header('location: ' . URL . 'provinces/index');
+            header('location: ' . URL . 'products/index');
         }
     }
-    public function deleteProvince($id)
+    public function deleteProduct($id)
     {
         if (isset($id)) {
             $this->model->deleteById($this->table_name, $this->key_word, $id);
         }
 
-        header('location: ' . URL . 'provinces/index');
+        header('location: ' . URL . 'products/index');
     }
 
-    public function editProvince($id)
+    public function editProduct($id)
     {
         if (isset($id)) {
-            $province = $this->model->getListById($this->table_name, $this->key_word, $id);
+            $product = $this->model->getListById($this->table_name, $this->key_word, $id);
+            $categorys = $this->model->getList("tbl_category");
+            $brands = $this->model->getList("tbl_brand");
             $this->setEdit($id);
             
             $this->model->sessionStart();
         require APP . 'view/_templates/header.php';
-            require APP . 'view/provinces/edit.php';
+            require APP . 'view/products/edit.php';
             require APP . 'view/_templates/footer.php';
         } else {
-            header('location: ' . URL . 'provinces/index');
+            header('location: ' . URL . 'products/index');
         }
     }
 
     public function setEdit($id){
         if(isset($_POST["updateList"])){
             $this->model->updateList($this->table_name, $this->key_word, $id, $_POST);
-            header('location: ' . URL . 'provinces/index');
+            header('location: ' . URL . 'products/index');
         }
     }  
 }

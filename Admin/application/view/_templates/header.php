@@ -1,15 +1,3 @@
-<?php 
-  session_start();
-  ob_start();  
-  if(!isset($_SESSION["isLogin"])){
-    // header("location:login.php");
-  }
-  // include("../connection.php");
-  $view="";
-  if (isset($_GET["view"])) {
-    $view=$_GET["view"];
-  }
-?> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>bower_components/Ionicons/css/ionicons.min.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>dist/css/AdminLTE.css">
   <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>dist/css/skins/skin-blue.min.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
