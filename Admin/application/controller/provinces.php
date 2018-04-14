@@ -22,6 +22,8 @@ class Provinces extends Controller
         $provinces = $this->model->getList($this->table_name);
 
        // load views. within the views we can echo out $songs and $amount_of_songs easily
+        
+        $this->model->sessionStart();
         require APP . 'view/_templates/header.php';
         require APP . 'view/provinces/index.php';
         require APP . 'view/_templates/footer.php';
@@ -30,6 +32,8 @@ class Provinces extends Controller
     public function addProvince()
     {
         $this->setAdd();
+        
+        $this->model->sessionStart();
         require APP . 'view/_templates/header.php';
         require APP . 'view/provinces/add.php';
         require APP . 'view/_templates/footer.php';
@@ -49,5 +53,27 @@ class Provinces extends Controller
 
         header('location: ' . URL . 'provinces/index');
     }
+
+    public function editProvince($id)
+    {
+        if (isset($id)) {
+            $province = $this->model->getListById($this->table_name, $this->key_word, $id);
+            $this->setEdit($id);
+            
+            $this->model->sessionStart();
+        require APP . 'view/_templates/header.php';
+            require APP . 'view/provinces/edit.php';
+            require APP . 'view/_templates/footer.php';
+        } else {
+            header('location: ' . URL . 'provinces/index');
+        }
+    }
+
+    public function setEdit($id){
+        if(isset($_POST["updateList"])){
+            $this->model->updateList($this->table_name, $this->key_word, $id, $_POST);
+            header('location: ' . URL . 'provinces/index');
+        }
+    }  
 }
 ?>

@@ -22,6 +22,8 @@ class Districts extends Controller
         $districts = $this->model->getList($this->table_name);
 
        // load views. within the views we can echo out $songs and $amount_of_songs easily
+        
+        $this->model->sessionStart();
         require APP . 'view/_templates/header.php';
         require APP . 'view/districts/index.php';
         require APP . 'view/_templates/footer.php';
@@ -30,6 +32,8 @@ class Districts extends Controller
     {
         $this->setAdd();
         $provinces = $this->model->getList("tbl_province");
+        
+        $this->model->sessionStart();
         require APP . 'view/_templates/header.php';
         require APP . 'view/districts/add.php';
         require APP . 'view/_templates/footer.php';
@@ -49,5 +53,28 @@ class Districts extends Controller
 
         header('location: ' . URL . 'districts/index');
     }
+
+    public function editDistrict($id)
+    {
+        if (isset($id)) {
+            $district = $this->model->getListById($this->table_name, $this->key_word, $id);
+            $provinces = $this->model->getList("tbl_province");
+            $this->setEdit($id);
+            
+            $this->model->sessionStart();
+        require APP . 'view/_templates/header.php';
+            require APP . 'view/districts/edit.php';
+            require APP . 'view/_templates/footer.php';
+        } else {
+            header('location: ' . URL . 'districts/index');
+        }
+    }
+
+    public function setEdit($id){
+        if(isset($_POST["updateList"])){
+            $this->model->updateList($this->table_name, $this->key_word, $id, $_POST);
+            header('location: ' . URL . 'districts/index');
+        }
+    }  
 }
 ?>

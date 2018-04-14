@@ -19,12 +19,6 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="password" class="col-sm-2 control-label">password</label>
-            <div class="col-sm-10">
-              <input class="form-control" id="password" name="password" type="password" required = "true">
-            </div>
-          </div>
-          <div class="form-group">
             <label class="col-sm-2 control-label">gender</label>
             <div class="col-sm-10">
               <label class="radio-inline"><input type="radio" id="male" name="gender" value="1" required = "true" <?php echo $user[0]->gender?"checked":"" ?>>Male</label>
@@ -51,7 +45,7 @@
           </div>
           <div class="form-group">
             <label for="province_user" class="col-sm-2 control-label">province</label>
-            <div class="col-sm-5">
+            <div class="col-sm-10">
                 <select class="form-control" id="province_user" name="province_user" onchange="getDistrict(this.value, 0, 'district_user')" required = "true">
                   <option value="">---Chọn---</option>
                 <?php  
@@ -70,7 +64,7 @@
           </div>
           <div class="form-group">
             <label for="district_user" class="col-sm-2 control-label">district</label>
-            <div class="col-sm-5">
+            <div class="col-sm-10">
               <select class="form-control" id="district_user" name="district_user" onchange="getWard(this.value, 0, 'ward_user')"  required = "true">
                  <option value="">---Chọn---</option>
               </select>
@@ -78,10 +72,16 @@
           </div>
           <div class="form-group">
             <label for="ward_user" class="col-sm-2 control-label">ward</label>
-            <div class="col-sm-5">
+            <div class="col-sm-10">
               <select class="form-control" id="ward_user" name="ward_user" required = "true">
                 <option value="">---Chọn---</option>
               </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="status" class="col-sm-2 control-label">status</label>
+            <div class="col-sm-10 checkbox">
+              <input class="" id="status" name="status" type="checkbox" value="1" <?php echo ($user[0]->status)?"checked":"" ?> style="margin-left: 0px;">
             </div>
           </div>
         </div>        

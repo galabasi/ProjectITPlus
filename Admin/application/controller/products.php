@@ -22,6 +22,8 @@ class Products extends Controller
         $products = $this->model->getList($this->table_name);
 
        // load views. within the views we can echo out $songs and $amount_of_songs easily
+        
+        $this->model->sessionStart();
         require APP . 'view/_templates/header.php';
         require APP . 'view/products/index.php';
         require APP . 'view/_templates/footer.php';
@@ -31,6 +33,8 @@ class Products extends Controller
         $this->setAdd();
         $categorys = $this->model->getList("tbl_category");
         $brands = $this->model->getList("tbl_brand");
+        
+        $this->model->sessionStart();
         require APP . 'view/_templates/header.php';
         require APP . 'view/products/add.php';
         require APP . 'view/_templates/footer.php';
@@ -50,5 +54,29 @@ class Products extends Controller
 
         header('location: ' . URL . 'products/index');
     }
+
+    public function editProduct($id)
+    {
+        if (isset($id)) {
+            $product = $this->model->getListById($this->table_name, $this->key_word, $id);
+            $categorys = $this->model->getList("tbl_category");
+            $brands = $this->model->getList("tbl_brand");
+            $this->setEdit($id);
+            
+            $this->model->sessionStart();
+        require APP . 'view/_templates/header.php';
+            require APP . 'view/products/edit.php';
+            require APP . 'view/_templates/footer.php';
+        } else {
+            header('location: ' . URL . 'products/index');
+        }
+    }
+
+    public function setEdit($id){
+        if(isset($_POST["updateList"])){
+            $this->model->updateList($this->table_name, $this->key_word, $id, $_POST);
+            header('location: ' . URL . 'products/index');
+        }
+    }  
 }
 ?>

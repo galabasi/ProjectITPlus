@@ -22,6 +22,8 @@ class Wards extends Controller
         $wards = $this->model->getList($this->table_name);
 
        // load views. within the views we can echo out $songs and $amount_of_songs easily
+        
+        $this->model->sessionStart();
         require APP . 'view/_templates/header.php';
         require APP . 'view/wards/index.php';
         require APP . 'view/_templates/footer.php';
@@ -30,6 +32,8 @@ class Wards extends Controller
     {
         $this->setAdd();
         $provinces = $this->model->getList("tbl_province");
+        
+        $this->model->sessionStart();
         require APP . 'view/_templates/header.php';
         require APP . 'view/wards/add.php';
         require APP . 'view/_templates/footer.php';
@@ -49,5 +53,29 @@ class Wards extends Controller
 
         header('location: ' . URL . 'wards/index');
     }
+
+    public function editWard($id)
+    {
+        if (isset($id)) {
+            $ward = $this->model->getListById($this->table_name, $this->key_word, $id);
+            $provinces = $this->model->getList("tbl_province");
+            $districts = $this->model->getListById("tbl_district", "id_province", $ward[0]->id_province);
+            $this->setEdit($id);
+            
+            $this->model->sessionStart();
+        require APP . 'view/_templates/header.php';
+            require APP . 'view/wards/edit.php';
+            require APP . 'view/_templates/footer.php';
+        } else {
+            header('location: ' . URL . 'wards/index');
+        }
+    }
+
+    public function setEdit($id){
+        if(isset($_POST["updateList"])){
+            $this->model->updateList($this->table_name, $this->key_word, $id, $_POST);
+            header('location: ' . URL . 'wards/index');
+        }
+    }  
 }
 ?>

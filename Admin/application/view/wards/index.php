@@ -30,8 +30,8 @@
                    <td><?php if (isset($ward->id_province)) echo htmlspecialchars($ward->id_province, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($ward->status)) echo htmlspecialchars($ward->status, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
-                        <a href="<?php echo URL . 'wards/editward/' . htmlspecialchars($user->id_ward, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Edit</a>
-                        <button class="btn btn-danger btn-xs" onclick="cfdelete(<?php echo htmlspecialchars($ward->id_ward, ENT_QUOTES, 'UTF-8') ?>);">Delete</button>
+                        <a href="<?php echo URL . 'wards/editward/' . htmlspecialchars($ward->id_ward, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Edit</a>
+                          <button class="btn btn-danger btn-xs" onclick="cfdelete(<?php echo htmlspecialchars($ward->id_ward, ENT_QUOTES, 'UTF-8') ?>);">Delete</button>
                     </td>
                 </tr> 
                 <?php

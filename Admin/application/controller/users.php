@@ -23,6 +23,8 @@ class Users extends Controller
         $users = $this->model->getList($this->table_name);
 
        // load views. within the views we can echo out $songs and $amount_of_songs easily
+        
+        $this->model->sessionStart();
         require APP . 'view/_templates/header.php';
         require APP . 'view/users/index.php';
         require APP . 'view/_templates/footer.php';
@@ -32,6 +34,8 @@ class Users extends Controller
     {
         $this->setAdd();
         $provinces = $this->model->getList("tbl_province");
+        
+        $this->model->sessionStart();
         require APP . 'view/_templates/header.php';
         require APP . 'view/users/add.php';
         require APP . 'view/_templates/footer.php';
@@ -58,7 +62,9 @@ class Users extends Controller
             $user[0]->birthday = date("d-m-Y",$temTime);
 
             $this->setEdit($id);
-            require APP . 'view/_templates/header.php';
+            
+            $this->model->sessionStart();
+        require APP . 'view/_templates/header.php';
             require APP . 'view/users/edit.php';
             require APP . 'view/_templates/footer.php';
         } else {

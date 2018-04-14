@@ -80,6 +80,12 @@
               </select>
             </div>
           </div>
+          <div class="form-group">
+            <label for="status" class="col-sm-2 control-label">status</label>
+            <div class="col-sm-10 checkbox">
+              <input class="" id="status" name="status" type="checkbox" value="1" checked style="margin-left: 0px;">
+            </div>
+          </div>
         </div>        
         <div class="box-footer">
           <div class="pull-right">

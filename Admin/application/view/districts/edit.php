@@ -7,14 +7,18 @@
       <form class="form-horizontal" method="post">
         <div class="box-body">
           <div class="form-group">
-            <label for="province" class="col-sm-2 control-label">province</label>
+            <label for="id_province" class="col-sm-2 control-label">province</label>
             <div class="col-sm-10">
-                <select class="form-control" id="id_province" name="id_province" onchange="getDistrict(this.value, 0, 'id_district')">
+                <select class="form-control" id="id_province" name="id_province">
                   <option>---Chọn---</option>
-                <?php  
+               <?php  
                   foreach ($provinces as $province) {
+                    $selected = "";
+                    if($province->id_province == $district[0]->id_province){
+                        $selected = "selected";
+                    }
                 ?>
-                  <option value="<?php echo htmlspecialchars($province->id_province, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($province->name_province, ENT_QUOTES, 'UTF-8'); ?></option>
+                  <option <?php echo $selected ?> value="<?php echo htmlspecialchars($province->id_province, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($province->name_province, ENT_QUOTES, 'UTF-8'); ?></option>
                 <?php   
                   }
                 ?>
@@ -22,23 +26,15 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="id_district" class="col-sm-2 control-label">district</label>
+            <label for="name_district" class="col-sm-2 control-label">name_district</label>
             <div class="col-sm-10">
-              <select class="form-control" id="id_district" name="id_district">
-                 <option>---Chọn---</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="name_ward" class="col-sm-2 control-label">name_ward</label>
-            <div class="col-sm-10">
-              <input class="form-control" id="name_ward" name="name_ward" type="text">
+              <input class="form-control" id="name_district" name="name_district" type="text" value="<?php echo htmlspecialchars($district[0]->name_district, ENT_QUOTES, 'UTF-8'); ?>">
             </div>
           </div>
           <div class="form-group">
             <label for="status" class="col-sm-2 control-label">status</label>
             <div class="col-sm-10 checkbox">
-              <input class="" id="status" name="status" type="checkbox" value="1" checked style="margin-left: 0px;">
+              <input class="" id="status" name="status" type="checkbox" value="1" <?php echo ($district[0]->status)?"checked":"" ?> style="margin-left: 0px;">
             </div>
           </div>
         </div>        
@@ -46,7 +42,7 @@
           <div class="pull-right">
             <button type="Reset" class="btn btn-default">Reset</button>
             <!-- <button type="submit" name="listU" id="listU" class="btn btn-default">List User</button> -->
-            <button type="submit" name="addNew" id="addNew" class="btn btn-info">Add New</button>
+            <button type="submit" name="updateList" id="updateList" class="btn btn-info">Add New</button>
           </div>
         </div>
       </form>

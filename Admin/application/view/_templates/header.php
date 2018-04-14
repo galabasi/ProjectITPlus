@@ -1,15 +1,3 @@
-<?php 
-  session_start();
-  ob_start();  
-  if(!isset($_SESSION["isLogin"])){
-    // header("location:login.php");
-  }
-  // include("../connection.php");
-  $view="";
-  if (isset($_GET["view"])) {
-    $view=$_GET["view"];
-  }
-?> 
 <!DOCTYPE html>
 <html>
 <head>

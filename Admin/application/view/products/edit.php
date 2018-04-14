@@ -9,7 +9,7 @@
           <div class="form-group">
             <label for="name_product" class="col-sm-2 control-label">name_product</label>
             <div class="col-sm-10">
-              <input class="form-control" id="name_product" name="name_product" type="text">
+              <input class="form-control" id="name_product" name="name_product" type="text" value="<?php echo htmlspecialchars($product[0]->name_product, ENT_QUOTES, 'UTF-8'); ?>">
             </div>
           </div>
           <div class="form-group">
@@ -19,8 +19,12 @@
                   <option>---Chọn---</option>
                 <?php  
                   foreach ($categorys as $category) {
+                    $selected = "";
+                    if($province->id_province == $district[0]->id_province){
+                        $selected = "selected";
+                    }
                 ?>
-                  <option value="<?php echo htmlspecialchars($category->id_category, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($category->name_category, ENT_QUOTES, 'UTF-8'); ?></option>
+                  <option <?php echo $selected ?> value="<?php echo htmlspecialchars($category->id_category, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($category->name_category, ENT_QUOTES, 'UTF-8'); ?></option>
                 <?php    
                   }
                 ?>
@@ -30,13 +34,13 @@
           <div class="form-group">
             <label for="price" class="col-sm-2 control-label">price</label>
             <div class="col-sm-10">
-              <input class="form-control" id="price" name="price" type="text">
+              <input class="form-control" id="price" name="price" type="text" value="<?php echo htmlspecialchars($product[0]->price, ENT_QUOTES, 'UTF-8'); ?>">
             </div>
           </div>
           <div class="form-group">
             <label for="sale" class="col-sm-2 control-label">sale</label>
             <div class="col-sm-10">
-              <input class="form-control" id="sale" name="sale" type="text">
+              <input class="form-control" id="sale" name="sale" type="text" value="<?php echo htmlspecialchars($product[0]->sale, ENT_QUOTES, 'UTF-8'); ?>">
             </div>
           </div>
           <div class="form-group">
@@ -46,8 +50,12 @@
                   <option>---Chọn---</option>
                 <?php  
                   foreach ($brands as $brand) {
+                    $selected = "";
+                    if($province->id_province == $district[0]->id_province){
+                        $selected = "selected";
+                    }
                 ?>
-                  <option value="<?php echo htmlspecialchars($brand->id_brand, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($brand->name_brand, ENT_QUOTES, 'UTF-8'); ?></option>
+                  <option <?php echo $selected ?> value="<?php echo htmlspecialchars($brand->id_brand, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($brand->name_brand, ENT_QUOTES, 'UTF-8'); ?></option>
                 <?php    
                   }
                 ?>
@@ -57,13 +65,13 @@
           <div class="form-group">
             <label for="description" class="col-sm-2 control-label">description</label>
             <div class="col-sm-10">
-              <textarea name="description" id="description" rows="6" style="width: 100%; resize: none;" ></textarea>
+              <textarea name="description" id="description" rows="6" style="width: 100%; resize: none;"><?php echo htmlspecialchars($product[0]->description, ENT_QUOTES, 'UTF-8'); ?></textarea>
             </div>
           </div>
           <div class="form-group">
             <label for="status" class="col-sm-2 control-label">status</label>
             <div class="col-sm-10 checkbox">
-              <input class="" id="status" name="status" type="checkbox" value="1" checked style="margin-left: 0px;">
+              <input class="" id="status" name="status" type="checkbox" value="1" <?php echo ($product[0]->status)?"checked":"" ?> style="margin-left: 0px;">
             </div>
           </div>
         </div>        
@@ -71,7 +79,7 @@
           <div class="pull-right">
             <button type="Reset" class="btn btn-default">Reset</button>
             <!-- <button type="submit" name="listU" id="listU" class="btn btn-default">List User</button> -->
-            <button type="submit" name="addNew" id="addNew" class="btn btn-info">Add New</button>
+            <button type="submit" name="updateList" id="updateList" class="btn btn-info">Add New</button>
           </div>
         </div>
       </form>

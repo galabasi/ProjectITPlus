@@ -28,7 +28,7 @@
                    <td><?php if (isset($category->id_parent)) echo htmlspecialchars($category->id_parent, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($category->status)) echo htmlspecialchars($category->status, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
-                        <a href="<?php echo URL . 'categorys/editcategory/' . htmlspecialchars($district->id_category, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Edit</a>
+                        <a href="<?php echo URL . 'categorys/editcategory/' . htmlspecialchars($category->id_category, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Edit</a>
                       <button class="btn btn-danger btn-xs" onclick="cfdelete(<?php echo htmlspecialchars($category->id_category, ENT_QUOTES, 'UTF-8') ?>);">Delete</button>
                       
                     </td>

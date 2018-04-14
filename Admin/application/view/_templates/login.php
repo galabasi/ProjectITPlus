@@ -1,10 +1,3 @@
-<?php  
-	session_start();
-  	ob_start();  
-  	if(isset($_SESSION["isLogin"])){
-  		header("location:index.php");
-  	}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,22 +35,9 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
-	<?php  
-		if(isset($_POST["btnLogin"])){
-			$email = $_POST["email"];
-			$password = md5($_POST["password"]);
-			$sqlCheckLogin = "SELECT * FROM tbl_users WHERE email='$email'";
-			$result = mysqli_query($conn,$sqlCheckLogin);
-			$userData = mysqli_fetch_row($result);
-			if(count($userData)){
-				$_SESSION["isLogin"] = $userData;
-				header("location:index.php");
-			}
-		}
-	?>
     <form action="" method="post">
       <div class="form-group has-feedback">
-        <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+        <input type="email" name="mail_user" id="mail_user" class="form-control" placeholder="Email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
@@ -80,13 +60,13 @@
       </div>
     </form>
 
-    <div class="social-auth-links text-center">
+<!--     <div class="social-auth-links text-center">
       <p>- OR -</p>
       <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
         Facebook</a>
       <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
         Google+</a>
-    </div>
+    </div> -->
     <!-- /.social-auth-links -->
 
     <a href="#">I forgot my password</a><br>

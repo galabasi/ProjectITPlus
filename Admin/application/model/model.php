@@ -24,8 +24,9 @@ class Model
 
     public function getListById($table, $key_word, $id)
     {
-        $sql = "SELECT * FROM $table WHERE $key_word = $id";
+        $sql = "SELECT * FROM $table WHERE $key_word = '$id'";
         $query = $this->db->prepare($sql);
+        // echo $sql;
         $query->execute();
         return $query->fetchAll();
     }
@@ -57,13 +58,13 @@ class Model
         if(is_array($data)){
             $val = "";
             $i = 0;
-            // $tmp = 1;
+            $tmp = 1;
             foreach ($data as $key => $value) {
                 if($key != "updateList"){
                     $i++;
-                    // if($key == "status"){
-                    //     $tmp = 0;
-                    // }
+                    if($key == "status"){
+                        $tmp = 0;
+                    }
                     if($i == 1){
                         $val .= $key." = '".$value."'";
                     } else{
@@ -71,9 +72,9 @@ class Model
                     }
                 }
             }
-            // if($tmp == 1){
-            //     $val .= ", status = '0'";
-            // }
+            if($tmp == 1){
+                $val .= ", status = '0'";
+            }
         }
         $sql = "UPDATE $table";
         $sql .= " SET ".$val;
@@ -89,5 +90,16 @@ class Model
         $query->execute();
     }
 
-
+    public function sessionStart(){
+        session_start();
+        ob_start();
+        if(!isset($_SESSION["isLogin"])){
+          header("location:".URL."login");
+        }
+    }
+    public function Logout(){
+        session_start();
+        session_unset(); 
+        session_destroy();
+    }
 }

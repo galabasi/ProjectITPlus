@@ -1,7 +1,7 @@
 <header class="main-header">
 
   <!-- Logo -->
-  <a href="<?php echo URL; ?>index.php" class="logo">
+  <a href="<?php echo URL; ?>home" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>A</b>LT</span>
     <!-- logo for regular state and mobile devices -->
@@ -120,7 +120,7 @@
             <!-- The user image in the navbar-->
             <img src="<?php echo URL; ?>dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-            <!-- <span class="hidden-xs"><?php echo $_SESSION["isLogin"][1]; ?></span> -->
+            <span class="hidden-xs"><?php echo $_SESSION["isLogin"][0]->mail_user; ?></span>
           </a>
           <ul class="dropdown-menu">
             <!-- The user image in the menu -->
@@ -128,8 +128,7 @@
               <img src="<?php echo URL; ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
               <p>
-                Alexander Pierce - Web Developer
-                <small>Member since Nov. 2012</small>
+                <?php echo $_SESSION["isLogin"][0]->mail_user; ?>
               </p>
             </li>
             <!-- Menu Body -->
@@ -153,7 +152,7 @@
                 <a href="#" class="btn btn-default btn-flat">Profile</a>
               </div>
               <div class="pull-right">
-                <a href="index.php?view=logout" class="btn btn-default btn-flat">Sign out</a>
+                <a href="<?php echo URL; ?>logout" class="btn btn-default btn-flat">Sign out</a>
               </div>
             </li>
           </ul>

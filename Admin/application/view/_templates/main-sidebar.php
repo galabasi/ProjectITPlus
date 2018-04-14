@@ -5,7 +5,7 @@
         <img src="<?php echo URL; ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p>Alexander Pierce</p>
+        <p><?php echo $_SESSION["isLogin"][0]->mail_user; ?></p>
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
     </div>
@@ -76,15 +76,15 @@
           <li><a href="<?php echo URL; ?>products">List Product</a></li>
         </ul>
       </li>
-      <li class="treeview active <?php echo ($view=='addImage'||$view=='listImage')?"active":"" ?>">
-        <a href=""><i class="fa fa-link"></i> <span>Image</span>
+      <li class="treeview active <?php echo ($view=='addCategory'||$view=='listCategory')?"active":"" ?>">
+        <a href=""><i class="fa fa-link"></i> <span>Category</span>
           <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
         <ul class="treeview active-menu">
-          <li><a href="index.php?view=addImage">Add Image</a></li>
-          <li><a href="index.php?view=listImage">List Image</a></li>
+          <li><a href="<?php echo URL; ?>categorys/addcategory">Add Category</a></li>
+          <li><a href="<?php echo URL; ?>categorys">List Category</a></li>
         </ul>
       </li>
       <li class="treeview active <?php echo ($view=='addBrand'||$view=='listBrand')?"active":"" ?>">
@@ -98,15 +98,15 @@
           <li><a href="<?php echo URL; ?>brands">List Brand</a></li>
         </ul>
       </li>
-      <li class="treeview active <?php echo ($view=='addCategory'||$view=='listCategory')?"active":"" ?>">
-        <a href=""><i class="fa fa-link"></i> <span>Category</span>
+      <li class="treeview active <?php echo ($view=='addImage'||$view=='listImage')?"active":"" ?>">
+        <a href=""><i class="fa fa-link"></i> <span>Image</span>
           <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
         <ul class="treeview active-menu">
-          <li><a href="<?php echo URL; ?>categorys/addcategory">Add Category</a></li>
-          <li><a href="<?php echo URL; ?>categorys">List Category</a></li>
+          <li><a href="index.php?view=addImage">Add Image</a></li>
+          <li><a href="index.php?view=listImage">List Image</a></li>
         </ul>
       </li>
 
