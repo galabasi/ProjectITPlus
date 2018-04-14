@@ -64,8 +64,8 @@
 						<a href="product_details.html"><img src="<?php echo htmlspecialchars($val->url_image, ENT_QUOTES, 'UTF-8');?>" alt=""></a>
 						<div class="caption cntr">
 							<p><?php echo htmlspecialchars($val->name_product, ENT_QUOTES, 'UTF-8');?></p>
-							<p><strong> <?php echo htmlspecialchars($val->price, ENT_QUOTES, 'UTF-8');?></strong></p>
-							<h4><a class="shopBtn" href="#" title="add to cart"> Thêm vào giỏ </a></h4>
+							<p><strong> <?php echo htmlspecialchars($val->price, ENT_QUOTES, 'UTF-8');?><sup>đ</sup></strong></p>
+							<h4><a class="shopBtn" href="javascript:void(0)" onclick="addCart(<?php echo $val->id_product ?>)" title="add to cart"> Thêm vào giỏ </a></h4>
 							
 						</div>
 					</div>

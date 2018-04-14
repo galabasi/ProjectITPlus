@@ -3,9 +3,9 @@ class Shop extends Controller
 {
     protected $key = "id_image";
     protected $table_name = "tbl_category";
+   
     public function index()
     {
-
         $category = $this->model->getAll($this->table_name);
     	$shop = $this->model->getShop(9);
         // load views/*

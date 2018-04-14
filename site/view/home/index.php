@@ -71,14 +71,10 @@
           <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
         </div>
       </div>
-<!--
-New Products
--->
+
 
 <?php
-  // echo "<pre>";
   $pro = array_chunk($newproduct,4);
-  // print_r($pro);
 ?>
     <div class="well well-small">
     <h3>Sản phẩm mới </h3>
@@ -137,7 +133,7 @@ New Products
     Featured Products
     -->
         <div class="well well-small">
-          <h3><a class="btn btn-mini pull-right" href="products.html" title="View more">Xem thêm<span class="icon-plus"></span></a> Sản phẩm nổi bật  </h3>
+          <h3><a class="btn btn-mini pull-right" href="shop" title="View more">Xem thêm<span class="icon-plus"></span></a> Sản phẩm nổi bật  </h3>
           <hr class="soften"/>
           <div class="row-fluid">
             <?php
@@ -150,14 +146,13 @@ New Products
               ?>
             <li class="span4">
               <div class="thumbnail">
-                <a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-                <a  href="product_details.html"><img src="<?=$val->url_image ?>" alt=""></a>
+                <a class="zoomTool" href="productdetails?id=<?php echo $val->id_product;?>" title="add to cart"><span class="icon-search"></span> Xem</a>
+                <a  href="productdetails?id=<?php echo $val->id_product;?>"><img src="<?=$val->url_image ?>" alt=""></a>
                 <div class="caption">
-                  <h5>Manicure & Pedicure</h5>
+                  <h5><?php echo $val->name_product;?></h5>
                   <h4>
-                      <a class="defaultBtn" href="product_details.html" title="Click to view"><span class="icon-zoom-in"></span></a>
-                      <a class="shopBtn" href="#" title="add to cart"><span class="icon-plus"></span></a>
-                      <span class="pull-right">$22.00</span>
+                      <a class="shopBtn" href="javascript:void(0)" onclick="addCart(<?php echo $val->id_product ?>)" title="add to cart"><span class="icon-plus"></span>Thêm vào giỏ</a>
+                      <span class="pull-right"><?php echo $val->price;?><sup>đ</sup></span>
                   </h4>
                 </div>
               </div>
