@@ -7,14 +7,14 @@
       <form class="form-horizontal" method="post">
         <div class="box-body">
           <div class="form-group">
-            <label for="name_province" class="col-sm-3 control-label">name_province</label>
-            <div class="col-sm-9">
+            <label for="name_province" class="col-sm-2 control-label">name_province</label>
+            <div class="col-sm-10">
               <input class="form-control" id="name_province" name="name_province" type="text">
             </div>
           </div>
           <div class="form-group">
-            <label for="status" class="col-sm-3 control-label">status</label>
-            <div class="col-sm-9 checkbox">
+            <label for="status" class="col-sm-2 control-label">status</label>
+            <div class="col-sm-10 checkbox">
               <input class="" id="status" name="status" type="checkbox" value="1" style="margin-left: 0px;">
             </div>
           </div>

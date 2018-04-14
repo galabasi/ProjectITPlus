@@ -28,8 +28,8 @@
                    <td><?php if (isset($category->id_parent)) echo htmlspecialchars($category->id_parent, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($category->status)) echo htmlspecialchars($category->status, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
-                        <a href="<?php echo "index.php?view=editProvince&province_id=".$row["province_id"] ?>" class="btn btn-primary btn-xs">Edit</a>
-                        <button class="btn btn-danger btn-xs" onclick="delete1(<?php echo $row["province_id"] ?>);">Delete</button>
+                        <a href="<?php echo URL . 'categorys/editcategory/' . htmlspecialchars($district->id_category, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Edit</a>
+                      <button class="btn btn-danger btn-xs" onclick="cfdelete(<?php echo htmlspecialchars($category->id_category, ENT_QUOTES, 'UTF-8') ?>);">Delete</button>
                       
                     </td>
                 </tr> 
@@ -44,3 +44,10 @@
     </div>
   </div>
 </div>
+<script>
+    function cfdelete(id){
+    if (confirm("Bạn có chắc chắn muốn xóa không?")) {
+      window.location.href="<?php echo URL . 'categorys/deleteCategory/'?>"+id;
+    }
+  }
+</script>

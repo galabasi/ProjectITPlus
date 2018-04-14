@@ -54,7 +54,7 @@
           <li><a href="<?php echo URL; ?>districts">List District</a></li>
         </ul>
       </li>
-      <li class="treeview active <?php echo ($view=='addWard'||$view=='listWard')?"active":"" ?>">
+      <li class="treeview active">
         <a href=""><i class="fa fa-link"></i> <span>Ward</span>
           <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -65,14 +65,14 @@
           <li><a href="<?php echo URL; ?>wards">List Ward</a></li>
         </ul>
       </li>
-      <li class="treeview active <?php echo ($view=='addProduct'||$view=='listProduct')?"active":"" ?>">
+      <li class="treeview active">
         <a href=""><i class="fa fa-link"></i> <span>Product</span>
           <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
         <ul class="treeview active-menu">
-          <li><a href="index.php?view=addProduct">Add Product</a></li>
+          <li><a href="<?php echo URL; ?>products/addproduct">Add Product</a></li>
           <li><a href="<?php echo URL; ?>products">List Product</a></li>
         </ul>
       </li>
@@ -94,8 +94,8 @@
             </span>
         </a>
         <ul class="treeview active-menu">
-          <li><a href="index.php?view=addBrand">Add Brand</a></li>
-          <li><a href="index.php?view=listBrand">List Brand</a></li>
+          <li><a href="<?php echo URL; ?>brands/addbrand">Add Brand</a></li>
+          <li><a href="<?php echo URL; ?>brands">List Brand</a></li>
         </ul>
       </li>
       <li class="treeview active <?php echo ($view=='addCategory'||$view=='listCategory')?"active":"" ?>">
@@ -105,7 +105,7 @@
             </span>
         </a>
         <ul class="treeview active-menu">
-          <li><a href="index.php?view=addCategory">Add Category</a></li>
+          <li><a href="<?php echo URL; ?>categorys/addcategory">Add Category</a></li>
           <li><a href="<?php echo URL; ?>categorys">List Category</a></li>
         </ul>
       </li>

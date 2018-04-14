@@ -9,46 +9,44 @@
  * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
  *
  */
-class Products extends Controller
+class Brands extends Controller
 {   
-    protected $table_name = "tbl_product";
-    protected $key_word = "id_product";
+    protected $table_name = "tbl_brand";
+    protected $key_word = "id_brand";
     /**
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/songs/index
      */
     public function index()
     {
-        $products = $this->model->getList($this->table_name);
+        $brands = $this->model->getList($this->table_name);
 
        // load views. within the views we can echo out $songs and $amount_of_songs easily
         require APP . 'view/_templates/header.php';
-        require APP . 'view/products/index.php';
+        require APP . 'view/brands/index.php';
         require APP . 'view/_templates/footer.php';
     }
-    public function addProduct()
+    public function addBrand()
     {
         $this->setAdd();
-        $categorys = $this->model->getList("tbl_category");
-        $brands = $this->model->getList("tbl_brand");
         require APP . 'view/_templates/header.php';
-        require APP . 'view/products/add.php';
+        require APP . 'view/brands/add.php';
         require APP . 'view/_templates/footer.php';
 
     }
     public function setAdd(){
         if(isset($_POST["addNew"])){
             $this->model->addNew($this->table_name, $_POST);
-            header('location: ' . URL . 'products/index');
+            header('location: ' . URL . 'brands/index');
         }
     }
-    public function deleteProduct($id)
+    public function deleteBrand($id)
     {
         if (isset($id)) {
             $this->model->deleteById($this->table_name, $this->key_word, $id);
         }
 
-        header('location: ' . URL . 'products/index');
+        header('location: ' . URL . 'brands/index');
     }
 }
 ?>

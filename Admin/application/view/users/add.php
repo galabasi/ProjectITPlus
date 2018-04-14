@@ -51,7 +51,7 @@
           </div>
           <div class="form-group">
             <label for="province" class="col-sm-2 control-label">province</label>
-            <div class="col-sm-5">
+            <div class="col-sm-10">
                 <select class="form-control" id="province_user" name="province_user" onchange="getDistrict(this.value, 0, 'district_user')" required = "true">
                   <option value="">---Chọn---</option>
                 <?php  
@@ -66,7 +66,7 @@
           </div>
           <div class="form-group">
             <label for="district_id" class="col-sm-2 control-label">district</label>
-            <div class="col-sm-5">
+            <div class="col-sm-10">
               <select class="form-control" id="district_user" name="district_user" onchange="getWard(this.value, 0, 'ward_user')"  required = "true">
                  <option value="">---Chọn---</option>
               </select>
@@ -74,7 +74,7 @@
           </div>
           <div class="form-group">
             <label for="ward" class="col-sm-2 control-label">ward</label>
-            <div class="col-sm-5">
+            <div class="col-sm-10">
               <select class="form-control" id="ward_user" name="ward_user" required = "true">
                 <option value="">---Chọn---</option>
               </select>

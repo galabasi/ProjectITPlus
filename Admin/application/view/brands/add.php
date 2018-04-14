@@ -2,29 +2,14 @@
   <div class="col-md-6">
     <div class="box box-info">
       <div class="box-header with-border">
-        <h3 class="box-title">Add Province</h3>
+        <h3 class="box-title">Add Brand</h3>
       </div>
       <form class="form-horizontal" method="post">
         <div class="box-body">
           <div class="form-group">
-            <label for="id_province" class="col-sm-2 control-label">province</label>
+            <label for="name_brand" class="col-sm-2 control-label">name_brand</label>
             <div class="col-sm-10">
-                <select class="form-control" id="id_province" name="id_province">
-                  <option>---Chọn---</option>
-               <?php  
-                  foreach ($provinces as $province) {
-                ?>
-                  <option value="<?php echo htmlspecialchars($province->id_province, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($province->name_province, ENT_QUOTES, 'UTF-8'); ?></option>
-                <?php   
-                  }
-                ?>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="name_district" class="col-sm-2 control-label">name_district</label>
-            <div class="col-sm-10">
-              <input class="form-control" id="name_district" name="name_district" type="text">
+              <input class="form-control" id="name_brand" name="name_brand" type="text">
             </div>
           </div>
           <div class="form-group">
