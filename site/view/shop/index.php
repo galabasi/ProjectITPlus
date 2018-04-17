@@ -3,9 +3,10 @@
 <div class="well well-small">
     <ul class="nav nav-list">
         <?php
-          foreach ($category as $category) {
+          foreach ($category as $key => $value) {
+             
         ?>
-        <li><a href=""><span class="icon-chevron-right"></span><?php echo htmlspecialchars($category->name_category, ENT_QUOTES, 'UTF-8');?></a></li>
+        <li><a href="javascript:void(0)" onclick="getList(<?php echo $value->id_category ?>)"><span class="icon-chevron-right"></span><?php echo $value->name_category; ?></a></li>
         <?php } ?>
     </ul>
 </div>
@@ -45,12 +46,12 @@
 <div class="span9">
 	<div class="well well-small">
 		<h3>Our Products </h3>
-		<div class="row-fluid">
+		<div class="row-fluid" id="list">
 			<?php
 				$s = array_chunk($shop, 3);
 				foreach ($s as $key => $value) {
-					
-
+            /*echo "<pre>";
+            print_r($value);*/
 				?>	
 			<ul class="thumbnails">
 				<?php 
@@ -60,8 +61,8 @@
 				<li class="span4">
 					<div class="thumbnail">
 						<a href="product_details.html" class="overlay"></a>
-						<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> Xem</a>
-						<a href="product_details.html"><img src="<?php echo htmlspecialchars($val->url_image, ENT_QUOTES, 'UTF-8');?>" alt=""></a>
+						<a class="zoomTool" href="productdetails?id=<?php echo $val->id_product;?>" title="add to cart"><span class="icon-search"></span> Xem</a>
+						<a href="productdetails?id=<?php echo $val->id_product;?>"><img src="<?php echo htmlspecialchars($val->url_image, ENT_QUOTES, 'UTF-8');?>" alt=""></a>
 						<div class="caption cntr">
 							<p><?php echo htmlspecialchars($val->name_product, ENT_QUOTES, 'UTF-8');?></p>
 							<p><strong> <?php echo htmlspecialchars($val->price, ENT_QUOTES, 'UTF-8');?><sup>đ</sup></strong></p>

@@ -31,32 +31,41 @@
 <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
 <script src="js/shop.js"></script>
 <script>  
-	
+	function getList(id){
+		$.post('<?php echo URL."shop/" ?>getList', {'id': id}, function(data) {
+			$("#list").load("shop #list");
+			});
+	}
+	function isChecked(id){
+			if($("#"+id).is(':checked')){
+				userName = $("#userName").val();
+				email = $("#email").val();
+				mobile = $("#mobile").val();
+				address = $("#address").val();
+
+				$("#userName_rev").val(userName);
+				$("#email_rev").val(email);
+				$("#mobile_rev").val(mobile);
+				$("#address_rev").val(address);
+			}else{
+				$("#userName_rev").val("");
+				$("#email_rev").val("");
+				$("#mobile_rev").val("");
+				$("#address_rev").val("");
+			}
+		}
 	function downItem(id){
-		/*alert(id);*/
 			quantity = $("#quantity_"+id).val();
-			
-			//cong gia tri do len 1
 			quantity =   parseInt(quantity) - 1;
-			//gan lai gia tri
 			$("#quantity_"+id).val(quantity);
-			/*alert(quantity);*/
 			$.post("<?php echo URL."cart/" ?>updateCart", {'id':id,'quantity':quantity}, function(data) {
 				$("#cartList").load("cart #cartList");
 			});
 		}
 		function upItem(id){
-			/*alert(id);*/
-			//laays gia tri hien tai
-
 			quantity = $("#quantity_"+id).val();
-
-			//cong gia tri do len 1
 			quantity =   parseInt(quantity) + 1;
-			/*alert(quantity);*/
-			//gan lai gia tri
 			$("#quantity_"+id).val(quantity);
-			
 			$.post("<?php echo URL."cart/" ?>updateCart", {'id':id,'quantity':quantity}, function(data) {
 				$("#cartList").load("cart #cartList");
 			});

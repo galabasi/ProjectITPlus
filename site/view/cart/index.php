@@ -35,38 +35,25 @@
 							<div class="input-append">
 								<a href="javascript:void(0)"  onclick="downItem(<?php echo $key ?>)" class="btn btn-mini" >-</a>
 								<a href="javascript:void(0)"  onclick="upItem(<?php echo $key ?>)" class="btn btn-mini" > + </a>
-								<a class="btn btn-mini btn-danger"  onclick="deleteItem(<?php echo $key ?>)" href="javascript:void(0)" type="button"><span class="icon-remove"></span></a>
+								<a class="btn btn-mini btn-danger"  onclick="deleteItem(<?php echo $key ?>)" href="javascript:void(0)" type="button"><span class="icon-remove"></span>X</a>
 							</div>
 						</td>
 						<td><?php echo $total =  $value["item"]->price*$value["quantity"]; ?></td>
 					</tr>
 						
-					<?php $subtotal += $total; }} ?>
+					<?php $subtotal += $total; }?>>
 					<tr>
 						<td colspan="6" class="alignR">Tổng tiền:	</td>
-						<td class="label label-primary"><?php echo $subtotal  ?> </td>
+						<td class="label label-primary"><?php echo $subtotal;  }?> </td>
 					</tr>
 				</tbody>
 			</table><br/>
+			<a href="shop" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Tiếp tục mua hàng </a>
+			<?php if (isset($_SESSION['cart']) && $_SESSION['cart']!=null){
+				?>
+			<a href="<?php if(!isset($_SESSION['user'])){echo "login";}else {echo "checkout";} ?>" class="shopBtn btn-large pull-right">Tiếp theo <span class="icon-arrow-right"></span></a>
+			<?php } ?>
 			
-			
-			<!-- <table class="table table-bordered">
-				<tbody>
-					<tr>
-						<td> 
-							<form class="form-inline">
-								<label style="min-width:159px"> Mã giảm giá: </label> 
-								<input type="text" class="input-medium" placeholder="CODE">
-								<button type="submit" class="shopBtn"> Sử dụng</button>
-							</form>
-						</td>
-					</tr>
-					
-				</tbody> -->
-					
-			<a href="index.php?view=shop" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Tiếp tục mua hàng </a>
-			<a href="login.html" class="shopBtn btn-large pull-right">Tiếp theo <span class="icon-arrow-right"></span></a>
-
 		</div>
 	</div>
 </div>

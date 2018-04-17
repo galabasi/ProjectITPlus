@@ -8,9 +8,9 @@
 			 </a>
 		  <div class="nav-collapse">
 				<ul class="nav">
-				 	<li class="<?php if($view == "") echo "active" ?>"><a href="<?php echo URL; ?>home">Trang chủ</a></li>
-				 	<li class="<?php if($view == "shop") echo "active" ?>"><a href="<?php echo URL; ?>shop">Cửa hàng</a></li>
-					<li class="<?php if($view == "contact") echo "active" ?>"><a href="<?php echo URL; ?>contact">Liên hệ với chúng tôi</a></li>
+				 	<li  class="active"><a href="home">Trang chủ</a></li>
+				 	<li  class=""><a href="shop">Cửa hàng</a></li>
+					<li  class=""><a href="contact">Liên hệ với chúng tôi</a></li>
 				</ul>
 				<form action="#" class="navbar-search pull-left">
 				 	<input type="text" placeholder="Tìm kiếm" class="search-query span2" autofocus="true">
@@ -24,11 +24,13 @@
 						?>
 						<a  href="login"><span class="icon-lock"></span> Đăng nhập </a>
 						<?php }else {?>
+								<!-- <a  class="" href="profile"><span class="icon-lock"></span> Cá nhân </a> -->
 								<a  class="" href="logout"><span class="icon-lock"></span> Đăng xuất </a>
 							<?php } ?>
 					</li>
 				</ul>
 		  </div>
+		  
 		</div>
 	</div>
 </div>

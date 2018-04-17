@@ -93,9 +93,9 @@
                   ?>
                   <li class="span3">
                     <div class="thumbnail">
-                        <a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+                        <a class="zoomTool" href="productdetails?id=<?php echo $a->id_product; ?>" title="add to cart"><span class="icon-search"></span> Xem</a>
                         <a href="#" class="tag"></a>
-                        <a href="product_details.html"><img src="<?=$a->url_image ?>" alt="bootstrap-ring"></a>
+                        <a href=""><img src="<?=$a->url_image ?>" alt="bootstrap-ring"></a>
                     </div>
                   </li>
                 <?php } ?>
@@ -175,22 +175,22 @@ Clients
     <hr class="soften"/>
     <div class="row">
         <div class="span2">
-            <a href="#"><img alt="" src="img/1.png"></a>
+            <a href="shop?id=1"><img alt="" src="img/1.png"></a>
         </div>
         <div class="span2">
-            <a href="#"><img alt="" src="img/2.png"></a>
+            <a href="shop?id=2"><img alt="" src="img/2.png"></a>
         </div>
         <div class="span2">
-            <a href="#"><img alt="" src="img/3.png"></a>
+            <a href="shop?id=3"><img alt="" src="img/3.png"></a>
         </div>
         <div class="span2">
-            <a href="#"><img alt="" src="img/4.png"></a>
+            <a href="shop?id=4"><img alt="" src="img/4.png"></a>
         </div>
         <div class="span2">
-            <a href="#"><img alt="" src="img/5.png"></a>
+            <a href="shop?id=5"><img alt="" src="img/5.png"></a>
         </div>
         <div class="span2">
-            <a href="#"><img alt="" src="img/6.png"></a>
+            <a href="shop?id=6"><img alt="" src="img/6.png"></a>
         </div>
     </div>
 </section>

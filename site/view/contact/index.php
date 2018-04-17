@@ -23,7 +23,7 @@
 		
 		<div class="span4">
 			<h4>Gửi thư cho chúng tôi</h4>
-			<form class="form-horizontal">
+			<form class="form-horizontal" method="post">
 				<fieldset>
 					<div class="control-group">
 
@@ -41,11 +41,11 @@
 
 					</div>
 					<div class="control-group">
-						<textarea rows="3" id="txtContent" placeholder="Nội dung"  class="input-xlarge"></textarea>
+						<textarea rows="3" id="txtContent" name="txtContent" placeholder="Nội dung"  class="input-xlarge"></textarea>
 
 					</div>
 
-					<button class="shopBtn" type="submit">Gửi</button>
+					<button class="shopBtn" name="send"  type="submit">Gửi</button>
 				</fieldset>
 			</form>
 		</div>

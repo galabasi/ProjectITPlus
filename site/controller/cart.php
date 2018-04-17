@@ -71,7 +71,7 @@ class Cart extends Controller
 	
     public function index()
     {
-       /* session_destroy();*/
+      
         require APP . 'view/templates/header.php';
         require APP . 'view/cart/index.php';
         require APP . 'view/templates/footer.php';
