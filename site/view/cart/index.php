@@ -6,7 +6,7 @@
 		</ul>
 		<div class="well well-small" id="cartList">
 			<h1>Giỏ hàng<small class="pull-right">  sản phẩm trong giỏ hàng </small></h1>
-			<hr class="soften"/>	
+			<hr class="soften"/>
 
 			<table class="table table-bordered table-condensed">
 				<thead>

@@ -53,8 +53,7 @@ class Model
         $query->execute();
     }
     public function getListByIdCate($id){
-        $sql = "SELECT p.name_product,p.price,p.description,p.id_product,p.id_category,i.url_image FROM tbl_product AS p, tbl_image as i WHERE id_category=$id and  i.id_product = p.id_product
-";
+        $sql = "SELECT p.name_product,p.price,p.description,p.id_product,p.id_category,i.url_image FROM tbl_product AS p, tbl_image as i WHERE id_category='$id' AND i.id_product = p.id_product";
         $query = $this->db->prepare($sql);
         $query->execute();
         return $query->fetchAll();

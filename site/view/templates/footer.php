@@ -32,9 +32,9 @@
 <script src="js/shop.js"></script>
 <script>  
 	function getList(id){
-		$.post('<?php echo URL."shop/" ?>getList', {'id': id}, function(data) {
+		$.post('<?php echo URL."shop" ?>/getList', {'id': id}, function(data) {
 			$("#list").load("shop #list");
-			});
+		});
 	}
 	function isChecked(id){
 			if($("#"+id).is(':checked')){

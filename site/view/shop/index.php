@@ -48,7 +48,7 @@
 		<h3>Our Products </h3>
 		<div class="row-fluid" id="list">
 			<?php
-				$s = array_chunk($shop, 3);
+				$s = array_chunk($_SESSION['shop'], 3);
 				foreach ($s as $key => $value) {
             /*echo "<pre>";
             print_r($value);*/
