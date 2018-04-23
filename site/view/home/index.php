@@ -5,7 +5,7 @@
         <?php
           foreach ($category as $category) {
         ?>
-        <li><a href=""><span class="icon-chevron-right"></span><?php echo htmlspecialchars($category->name_category, ENT_QUOTES, 'UTF-8');?></a></li>
+        <li><a href="shop" ><span class="icon-chevron-right"></span><?php echo htmlspecialchars($category->name_category, ENT_QUOTES, 'UTF-8');?></a></li>
         <?php } ?>
     </ul>
 </div>

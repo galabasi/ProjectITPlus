@@ -37,21 +37,17 @@
 				<div class="span6" style="margin: 0px;">
 					<h3>Thông tin người nhận hàng</h3>
 					<div class="form-group">
-						<label for="userName_rev">Họ và tên:</label>
-					    <input type="text" class="form-control" id="userName_rev" name="userName_rev" placeholder="Tên" />
+						<label for="name_receive">Họ và tên:</label>
+					    <input type="text" class="form-control" id="name_receive" name="name_receive" placeholder="Tên" />
 					</div>
 					<div class="form-group">
-						<label for="email_rev">Email:</label>
-					    <input type="text" class="form-control" id="email_rev"  name="email_rev" placeholder="Email" />
+						<label for="phone_receive">Số điện thoại:</label>
+					    <input type="text" class="form-control" id="phone_receive" name="phone_receive" placeholder="Điện thoại" />
 					</div>
 					<div class="form-group">
-						<label for="mobile_rev">Số điện thoại:</label>
-					    <input type="text" class="form-control" id="mobile_rev" name="mobile_rev" placeholder="Điện thoại" />
-					</div>
-					<div class="form-group">
-						<label for="address_rev">Địa chỉ:</label>
+						<label for="address_receive">Địa chỉ:</label>
 					    
-					    <textarea name="address_rev" id="address_rev" cols="20" rows="5" ></textarea>
+					    <textarea name="address_receive" id="address_receive" cols="20" rows="5" ></textarea>
 					</div>
 				</div>
 				<div class="span12">

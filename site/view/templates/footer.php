@@ -43,15 +43,13 @@
 				mobile = $("#mobile").val();
 				address = $("#address").val();
 
-				$("#userName_rev").val(userName);
-				$("#email_rev").val(email);
-				$("#mobile_rev").val(mobile);
-				$("#address_rev").val(address);
+				$("#name_receive").val(userName);
+				$("#phone_receive").val(mobile);
+				$("#address_receive").val(address);
 			}else{
-				$("#userName_rev").val("");
-				$("#email_rev").val("");
-				$("#mobile_rev").val("");
-				$("#address_rev").val("");
+				$("#name_receive").val("");
+				$("#phone_receive").val("");
+				$("#address_receive").val("");
 			}
 		}
 	function downItem(id){

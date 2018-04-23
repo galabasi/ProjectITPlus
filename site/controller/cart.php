@@ -67,7 +67,9 @@ class Cart extends Controller
             $_SESSION["cart"] = $cart;
         }   
 	}
-    
+    public function thanhtoan(){
+        
+    }
 	
     public function index()
     {
