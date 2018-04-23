@@ -7,7 +7,7 @@ class Home extends Controller
     public function index()
     {
         $category = $this->model->getAll($this->table_name1);
-        $slider = $this->model->getAll($this->table_name2);
+        $sliders = $this->model->getAll($this->table_name2);
         $newproduct = $this->model->getShop(8);
         $featureitem = $this->model->getShop(6);
         require APP . 'view/templates/header.php';

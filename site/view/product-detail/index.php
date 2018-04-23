@@ -35,6 +35,7 @@
           </ul>
 
     </div>
+
 <div class="span9">
 	<ul class="breadcrumb">
 		<li><a href="index.php">Trang chủ</a> <span class="divider">/</span></li>
@@ -49,7 +50,7 @@
 
 					<div class="carousel-inner">
 						
-						<div class="item ">
+						<div class="item active">
 							<a href="#"> <img src="<?= $productdetail->url_image ?>" alt="" style="width:100%"></a>
 						</div>
 						

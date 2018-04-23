@@ -46,11 +46,13 @@
 						<td><?php echo $total =  $value["item"]->price*$value["quantity"]; ?></td>
 					</tr>
 						
-					<?php $subtotal += $total; }?>
+					<?php $subtotal += $total;
+					}?>
 					<tr>
-						<td colspan="6" class="alignR">Tổng tiền:	</td>
-						<td class="label label-primary"><?php echo $subtotal;  }?> </td>
+						<td colspan="4" class="alignR">Tổng tiền:</td>
+						<td class=""><?php echo $subtotal;?> </td>
 					</tr>
+					<?php } ?>
 				</tbody>
 			</table><br/>
 			<a href="shop" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Tiếp tục mua hàng </a>
