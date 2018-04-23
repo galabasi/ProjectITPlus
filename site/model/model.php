@@ -98,7 +98,7 @@ class Model
     }
 
     public function laySP($id){
-        $sql = "SELECT p.id_product, p.name_product, p.id_category,p.price,p.sale,p.id_brand,i.url_image,i.url_image,b.name_brand,c.name_category,p.description FROM tbl_product AS p,tbl_brand as b,tbl_image AS i, tbl_category AS c WHERE p.id_product = $id and  i.id_product = p.id_product and p.id_brand = b.id_brand";
+        $sql = "SELECT p.id_product, p.name_product, p.id_category,p.price,p.sale,p.id_brand,i.url_image,i.url_image,b.name_brand,c.name_category,p.description FROM tbl_product AS p,tbl_brand as b,tbl_image AS i, tbl_category AS c WHERE p.id_product = '$id' and  i.id_product = p.id_product and p.id_brand = b.id_brand";
         $query = $this->db->prepare($sql);
         $query->execute();
         /*return $sql;*/

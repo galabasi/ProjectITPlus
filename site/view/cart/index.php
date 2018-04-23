@@ -1,3 +1,8 @@
+<!-- <?php 
+	echo "<pre>";
+	print_r($_SESSION['cart']);
+ ?> -->
+
 <div class="row">
 	<div class="span12">
 		<ul class="breadcrumb">
@@ -14,7 +19,7 @@
 						<th>Sản phẩm</th>
 						<th>Thông tin</th>
 						<th>Giá</th>
-						<th>Số lượng </th>
+						<th>Số lượng</th>
 						<th>Tổng</th>
 					</tr>
 				</thead>
@@ -35,13 +40,13 @@
 							<div class="input-append">
 								<a href="javascript:void(0)"  onclick="downItem(<?php echo $key ?>)" class="btn btn-mini" >-</a>
 								<a href="javascript:void(0)"  onclick="upItem(<?php echo $key ?>)" class="btn btn-mini" > + </a>
-								<a class="btn btn-mini btn-danger"  onclick="deleteItem(<?php echo $key ?>)" href="javascript:void(0)" type="button"><span class="icon-remove"></span>X</a>
+								<a class="btn btn-mini btn-danger"  onclick="deleteItem(<?php echo $key ?>)" href="javascript:void(0)" type="button"><span class="icon-remove"></span></a>
 							</div>
 						</td>
 						<td><?php echo $total =  $value["item"]->price*$value["quantity"]; ?></td>
 					</tr>
 						
-					<?php $subtotal += $total; }?>>
+					<?php $subtotal += $total; }?>
 					<tr>
 						<td colspan="6" class="alignR">Tổng tiền:	</td>
 						<td class="label label-primary"><?php echo $subtotal;  }?> </td>
