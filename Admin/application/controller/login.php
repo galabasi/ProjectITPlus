@@ -18,10 +18,14 @@ CLass Login extends Controller{
 			$mail_user = $_POST["mail_user"];
 			$password = md5($_POST["password"]);
 			$user = $this->model->getListById($this->table_name, $this->key_word, $mail_user);
-			if(isset($user)){
-				if($user[0]->password == $password){
-					$_SESSION["isLogin"] = $user;
-					return header("location:".URL."home");
+			// print_r($user);
+			if(isset($user[0])){
+				if($user[0]->mail_user != ""){
+					echo "GG";
+					if($user[0]->password == $password){
+						$_SESSION["isLogin"] = $user;
+						return header("location:".URL."home");
+					}
 				}
 			}
 		}

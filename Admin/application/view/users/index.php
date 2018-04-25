@@ -21,18 +21,14 @@
                 <th>district</th>
                 <th>ward</th>
                 <th>status</th>
-                <th>role</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <?php 
-                // $i = 0;
+              <?php
+                $i = -1;
                 foreach ($users as $user) {
-                // $i++;
-                // $gender=$rowUser["gender"]?"0":"1";
-                // $birthday=date("d-m-Y",strtotime($rowUser["birthday"]));
-                // $getUser="index.php?view=editUser,user_id=".$rowUser["user_id"];
+                  $i++;
                 ?>
                 <tr>
                   <td><?php if (isset($user->id_user)) echo htmlspecialchars($user->id_user, ENT_QUOTES, 'UTF-8'); ?></td>
@@ -42,11 +38,10 @@
                   <td><?php if (isset($user->phone_user)) echo htmlspecialchars($user->phone_user, ENT_QUOTES, 'UTF-8'); ?></td>
                   <td><?php if (isset($user->birthday)) echo htmlspecialchars($user->birthday, ENT_QUOTES, 'UTF-8'); ?></td>
                   <td><?php if (isset($user->address_user)) echo htmlspecialchars($user->address_user, ENT_QUOTES, 'UTF-8'); ?></td>
-                  <td><?php if (isset($user->province_user)) echo htmlspecialchars($user->province_user, ENT_QUOTES, 'UTF-8'); ?></td>
-                  <td><?php if (isset($user->district_user)) echo htmlspecialchars($user->district_user, ENT_QUOTES, 'UTF-8'); ?></td>
-                  <td><?php if (isset($user->ward_user)) echo htmlspecialchars($user->ward_user, ENT_QUOTES, 'UTF-8'); ?></td>
+                  <td><?php if (isset($user->province_user)) echo htmlspecialchars($provinces[$i]->name_province, ENT_QUOTES, 'UTF-8'); ?></td>
+                  <td><?php if (isset($user->district_user)) echo htmlspecialchars($districts[$i]->name_district, ENT_QUOTES, 'UTF-8'); ?></td>
+                  <td><?php if (isset($user->ward_user)) echo htmlspecialchars($wards[$i]->name_ward, ENT_QUOTES, 'UTF-8'); ?></td>
                   <td><?php if (isset($user->status)) echo htmlspecialchars($user->status, ENT_QUOTES, 'UTF-8'); ?></td>
-                  <td><?php if (isset($user->role)) echo htmlspecialchars($user->role, ENT_QUOTES, 'UTF-8'); ?></td>
                   <td>
                     <a href="<?php echo URL . 'users/edituser/' . htmlspecialchars($user->id_user, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Edit</a>
                     <button class="btn btn-danger btn-xs" onclick="cfdelete(<?php echo htmlspecialchars($user->id_user, ENT_QUOTES, 'UTF-8') ?>);">Delete</button>

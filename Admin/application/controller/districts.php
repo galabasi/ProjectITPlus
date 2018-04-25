@@ -1,28 +1,20 @@
 <?php
 
-/**
- * Class Songs
- * This is a demo class.
- *
- * Please note:
- * Don't use the same name for class and method, as this might trigger an (unintended) __construct of the class.
- * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
- *
- */
 class Districts extends Controller
 {   
     protected $table_name = "tbl_district";
     protected $key_word = "id_district";
-    /**
-     * PAGE: index
-     * This method handles what happens when you move to http://yourproject/songs/index
-     */
+
     public function index()
     {
         $districts = $this->model->getList($this->table_name);
+        $provinces = array();
+        foreach($districts as $district){
+            $province = $this->model->getListById("tbl_province", "id_province", $district->id_province);
+            $provinces[] = $province[0];
+        }
 
-       // load views. within the views we can echo out $songs and $amount_of_songs easily
-        
+
         $this->model->sessionStart();
         require APP . 'view/_templates/header.php';
         require APP . 'view/districts/index.php';

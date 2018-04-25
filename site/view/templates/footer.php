@@ -7,7 +7,7 @@
 		</div>
 		<div class="span2">
 			<h5>Về chúng tôi</h5>
-			<a href="contact.html">Liên hệ</a><br>
+			<a href="<?php echo URL ?>contact">Liên hệ</a><br>
 			<a href="#">Bản đồ</a><br>
 			<a href="#">Giấy phép hoạt động</a><br>
 		</div>

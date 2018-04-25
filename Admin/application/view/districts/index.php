@@ -18,13 +18,15 @@
               </tr>
             </thead>
             <tbody>
-                <?php  
+                <?php 
+                  $i = -1;
                   foreach ($districts as $district) {
+                    $i++;
                 ?>
                  <tr>
                     <td><?php if (isset($district->id_district)) echo htmlspecialchars($district->id_district, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($district->name_district)) echo htmlspecialchars($district->name_district, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($district->id_province)) echo htmlspecialchars($district->id_province, ENT_QUOTES, 'UTF-8'); ?></td>
+                    <td><?php if (isset($district->id_province)) echo htmlspecialchars($provinces[$i]->name_province, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($district->status)) echo htmlspecialchars($district->status, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
                       <a href="<?php echo URL . 'districts/editdistrict/' . htmlspecialchars($district->id_district, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Edit</a>

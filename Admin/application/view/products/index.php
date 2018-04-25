@@ -14,26 +14,28 @@
                 <th>#</th>
                 <th>name_product</th>
                 <th>category</th>
+                <th>brand</th>
                 <th>price</th>
                 <th>sale</th>
-                <th>brand</th>
                 <th>description</th>
                 <th>status</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-                <?php  
+                <?php
+                  $i = -1;
                   foreach ($products as $product) {
+                    $i++;
                 ?>
                  <tr>
                    <td><?php if (isset($product->id_product)) echo htmlspecialchars($product->id_product, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($product->name_product)) echo htmlspecialchars($product->name_product, ENT_QUOTES, 'UTF-8'); ?></td>
-                   <td><?php if (isset($product->id_category)) echo htmlspecialchars($product->id_category, ENT_QUOTES, 'UTF-8'); ?></td>
+                   <td><?php if (isset($product->id_category)) echo htmlspecialchars($categorys[$i]->name_category, ENT_QUOTES, 'UTF-8'); ?></td>
+                   <td><?php if (isset($product->id_brand)) echo htmlspecialchars($brands[$i]->name_brand, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($product->price)) echo htmlspecialchars($product->price, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($product->sale)) echo htmlspecialchars($product->sale, ENT_QUOTES, 'UTF-8'); ?></td>
-                   <td><?php if (isset($product->id_brand)) echo htmlspecialchars($product->id_brand, ENT_QUOTES, 'UTF-8'); ?></td>
-                   <td><?php if (isset($product->description)) echo htmlspecialchars($product->description, ENT_QUOTES, 'UTF-8'); ?></td>
+                   <td width="30%"><?php if (isset($product->description)) echo htmlspecialchars($product->description, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($product->status)) echo htmlspecialchars($product->status, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
                         <a href="<?php echo URL . 'products/editproduct/' . htmlspecialchars($product->id_product, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Edit</a>

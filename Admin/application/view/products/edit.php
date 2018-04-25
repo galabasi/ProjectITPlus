@@ -20,7 +20,7 @@
                 <?php  
                   foreach ($categorys as $category) {
                     $selected = "";
-                    if($province->id_province == $district[0]->id_province){
+                    if($category->id_category == $product[0]->id_category){
                         $selected = "selected";
                     }
                 ?>
@@ -51,7 +51,7 @@
                 <?php  
                   foreach ($brands as $brand) {
                     $selected = "";
-                    if($province->id_province == $district[0]->id_province){
+                    if($brand->id_brand == $product[0]->id_brand){
                         $selected = "selected";
                     }
                 ?>
