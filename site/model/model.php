@@ -9,6 +9,34 @@ class Model
             exit('Không thể kết nối tới database');
         }
     }
+    public function getLastID(){
+        $sql = "SELECT id_order FROM `tbl_order` ORDER BY id_order DESC LIMIT 1 ";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return $query->fetch();
+    }
+    public function addOrder($tbl,$data){
+        if(is_array($data)){
+           $field="";
+           $val="";
+           $i=0;
+            foreach ($data as $key => $value) {
+               $i++;
+                if($key !="addNew"){
+                    if($i==1){
+                        $field .=$key;
+                        $val .="'".$value."'";
+                   }else{
+                       $field .= ','.$key;
+                        $val .=",'".$value."'";
+                    }
+                }
+            }
+            $sql = "INSERT INTO ". $tbl . " ($field) VALUES($val)";
+            $query = $this->db->prepare($sql);
+            $query->execute();
+       }
+    }
     public function addNew($table, $data){
        if(is_array($data)){
            $field="";

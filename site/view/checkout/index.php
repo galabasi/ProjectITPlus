@@ -40,10 +40,15 @@
 						<label for="name_receive">Họ và tên:</label>
 					    <input type="text" class="form-control" id="name_receive" name="name_receive" placeholder="Tên" />
 					</div>
+					<!-- <div class="form-group">
+						<label for="email">Email:</label>
+					    <input type="text" class="form-control" name="email_receive" id="email_receive" value="" />
+					</div> -->
 					<div class="form-group">
 						<label for="phone_receive">Số điện thoại:</label>
 					    <input type="text" class="form-control" id="phone_receive" name="phone_receive" placeholder="Điện thoại" />
 					</div>
+
 					<div class="form-group">
 						<label for="address_receive">Địa chỉ:</label>
 					    
@@ -57,10 +62,10 @@
 					    </label>
 					</div>
 				</div>
+          <input  type="submit" name="checkout" id="checkout" value="Thanh toán" class="exclusive shopBtn btn-large ">
 			</form>
-					
-			<a href="cart" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Quay lại </a>
-			<a href="" class="shopBtn btn-large pull-right">Thanh toán <span class="icon-arrow-right"></span></a>
+			<a href="cart" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Quay lại </a>		
+			
 		</div>
 	</div>
 </div>
