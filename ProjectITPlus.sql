@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-04-29 19:53:06
+Date: 2018-04-29 21:50:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1018,11 +1018,11 @@ CREATE TABLE `tbl_user` (
 -- ----------------------------
 -- Records of tbl_user
 -- ----------------------------
-INSERT INTO tbl_user VALUES ('1', 'taduyhieu', 'hieu@gmail.com', '123456', '1', '0876543456', '2000-02-01', 'Hải Dương', '1', '1', '4', '1', '1', '2018-02-27', '2018-02-26');
-INSERT INTO tbl_user VALUES ('2', 'thang', 'thang@gmail.com', '123456', '1', '0876543456', '2000-02-01', 'Hải Dương', '1', '1', '4', '1', '1', '2018-02-27', '2018-02-26');
-INSERT INTO tbl_user VALUES ('3', 'thang', 'thang@gmail.com', '123456', '1', '0876543456', '2000-02-01', 'Hải Dương', '1', '1', '4', '1', '1', '2018-02-27', '2018-02-26');
-INSERT INTO tbl_user VALUES ('4', 'thang', 'thang@gmail.com', '123456', '1', '0876543456', '2000-02-01', 'Hải Dương', '1', '1', '4', '1', '1', '2018-02-27', '2018-02-26');
-INSERT INTO tbl_user VALUES ('5', 'admin', 'admin@admin.com', '123456', '1', '3125213123', '0000-00-00', 'Xóm 9, Quang Yên', '33', '333', '12415', '1', '1', '0000-00-00', '0000-00-00');
+INSERT INTO tbl_user VALUES ('1', 'taduyhieu', 'hieu@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '0876543456', '2000-02-01', 'Hải Dương', '1', '1', '4', '1', '1', '2018-02-27', '2018-02-26');
+INSERT INTO tbl_user VALUES ('2', 'thang', 'thang@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '0876543456', '2000-02-01', 'Hải Dương', '1', '1', '4', '1', '1', '2018-02-27', '2018-02-26');
+INSERT INTO tbl_user VALUES ('3', 'thang', 'thang@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '0876543456', '2000-02-01', 'Hải Dương', '1', '1', '4', '1', '1', '2018-02-27', '2018-02-26');
+INSERT INTO tbl_user VALUES ('4', 'thang', 'thang@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '0876543456', '2000-02-01', 'Hải Dương', '1', '1', '4', '1', '1', '2018-02-27', '2018-02-26');
+INSERT INTO tbl_user VALUES ('5', 'admin', 'admin@admin.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '3125213123', '0000-00-00', 'Xóm 9, Quang Yên', '33', '333', '12415', '1', '1', '0000-00-00', '0000-00-00');
 
 -- ----------------------------
 -- Table structure for `tbl_ward`
