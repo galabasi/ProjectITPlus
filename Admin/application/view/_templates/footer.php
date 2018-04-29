@@ -8,11 +8,11 @@
 <script src="<?php echo URL; ?>bower_components/jquery/dist/jquery.min.js"></script>
 <script src="<?php echo URL; ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="<?php echo URL; ?>dist/js/adminlte.min.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>jquery-ui/jquery-ui.css">
 <script src="<?php echo URL; ?>jquery-ui/jquery-ui.js"></script>
 <script src="<?php echo URL; ?><?php echo URL; ?>tinymce/tinymce.min.js"></script>
 <script src="<?php echo URL; ?>js/main.js"></script>
-<script>  
+<script src="<?php echo URL; ?>jquery-confirm/dist/jquery-confirm.min.js"></script>
+<script>
   function getDistrict(id, tmp, target){
     $("#ward_user").html('<option value="">---Chọn---</option>');
     $.post("<?php echo URL."users/" ?>getdistrict", {'id':id, 'tmp':tmp}, function(data) {

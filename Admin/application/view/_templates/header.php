@@ -10,6 +10,8 @@
   <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>bower_components/Ionicons/css/ionicons.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>dist/css/AdminLTE.css">
   <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>dist/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>jquery-ui/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>jquery-confirm/dist/jquery-confirm.min.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
