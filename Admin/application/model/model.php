@@ -22,6 +22,15 @@ class Model
         return $query->fetchAll();
     }
 
+    public function getListByLimit($table, $limit)
+    {
+        $limit = $limit*1000;
+        $sql = "SELECT * FROM $table LIMIT $limit, 1000";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();
+    }
+
     public function getListById($table, $key_word, $id)
     {
         $sql = "SELECT * FROM $table WHERE $key_word = '$id'";

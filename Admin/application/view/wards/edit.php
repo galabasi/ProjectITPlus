@@ -2,13 +2,13 @@
   <div class="col-md-6">
     <div class="box box-info">
       <div class="box-header with-border">
-        <h3 class="box-title">Add Province</h3>
+        <h3 class="box-title">Chỉnh sửa phường/xã</h3>
       </div>
       <form class="form-horizontal" method="post">
         <div class="box-body">
           <div class="form-group">
-            <label for="province" class="col-sm-2 control-label">province</label>
-            <div class="col-sm-10">
+            <label for="province" class="col-sm-3 control-label">Tên tỉnh/thành phố</label>
+            <div class="col-sm-9">
                 <select class="form-control" id="id_province" name="id_province" onchange="getDistrict(this.value, 0, 'id_district')">
                   <option>---Chọn---</option>
                 <?php  
@@ -26,8 +26,8 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="id_district" class="col-sm-2 control-label">district</label>
-            <div class="col-sm-10">
+            <label for="id_district" class="col-sm-3 control-label">Tên quận/huyện</label>
+            <div class="col-sm-9">
               <select class="form-control" id="id_district" name="id_district">
                  <option>---Chọn---</option>
                  <?php  
@@ -45,23 +45,23 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="name_ward" class="col-sm-2 control-label">name_ward</label>
-            <div class="col-sm-10">
+            <label for="name_ward" class="col-sm-3 control-label">Tên phường/xã</label>
+            <div class="col-sm-9">
               <input class="form-control" id="name_ward" name="name_ward" type="text" value="<?php echo htmlspecialchars($ward[0]->name_ward, ENT_QUOTES, 'UTF-8'); ?>">
             </div>
           </div>
           <div class="form-group">
-            <label for="status" class="col-sm-2 control-label">status</label>
-            <div class="col-sm-10 checkbox">
+            <label for="status" class="col-sm-3 control-label">Trạng thái</label>
+            <div class="col-sm-9 checkbox">
               <input class="" id="status" name="status" type="checkbox" value="1" <?php echo ($ward[0]->status)?"checked":"" ?> style="margin-left: 0px;">
             </div>
           </div>
         </div>        
         <div class="box-footer">
           <div class="pull-right">
-            <button type="Reset" class="btn btn-default">Reset</button>
+            <button type="Reset" class="btn btn-default">Đặt lại</button>
             <!-- <button type="submit" name="listU" id="listU" class="btn btn-default">List User</button> -->
-            <button type="submit" name="updateList" id="updateList" class="btn btn-info">Add New</button>
+            <button type="submit" name="updateList" id="updateList" class="btn btn-info">Sửa</button>
           </div>
         </div>
       </form>

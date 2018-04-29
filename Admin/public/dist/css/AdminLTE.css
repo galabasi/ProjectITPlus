@@ -4981,3 +4981,7 @@ table.text-center th {
     white-space: normal !important;
   }
 }
+h3 {
+  text-transform: uppercase;
+  /*font-weight: bold;*/
+}

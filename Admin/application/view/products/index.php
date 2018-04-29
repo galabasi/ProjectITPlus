@@ -2,7 +2,7 @@
 <div class="col-xs-12">
   <div class="box">
     <div class="box-header">
-      <h3 class="box-title">List Province</h3>
+      <h3 class="box-title">Danh sách sản phẩm</h3>
     </div>
     <div class="box-body">
       <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
@@ -11,15 +11,15 @@
             <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
               <thead>
                <tr role="row">
-                <th>#</th>
-                <th>name_product</th>
-                <th>category</th>
-                <th>brand</th>
-                <th>price</th>
-                <th>sale</th>
-                <th>description</th>
-                <th>status</th>
-                <th>Action</th>
+                <th>ID</th>
+                <th>Tên sản phẩm</th>
+                <th>Danh mục</th>
+                <th>Nhãn hiệu</th>
+                <th>Giá</th>
+                <th>Giảm giá(%)</th>
+                <th>Miêu tả</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
               </tr>
             </thead>
             <tbody>
@@ -36,10 +36,10 @@
                    <td><?php if (isset($product->price)) echo htmlspecialchars($product->price, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td><?php if (isset($product->sale)) echo htmlspecialchars($product->sale, ENT_QUOTES, 'UTF-8'); ?></td>
                    <td width="30%"><?php if (isset($product->description)) echo htmlspecialchars($product->description, ENT_QUOTES, 'UTF-8'); ?></td>
-                   <td><?php if (isset($product->status)) echo htmlspecialchars($product->status, ENT_QUOTES, 'UTF-8'); ?></td>
+                   <td><?php if (isset($product->status)) echo $product->status?"Hiện":"Ẩn"; ?></td>
                     <td>
-                        <a href="<?php echo URL . 'products/editproduct/' . htmlspecialchars($product->id_product, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Edit</a>
-                      <button class="btn btn-danger btn-xs" onclick="cfdelete(<?php echo htmlspecialchars($product->id_product, ENT_QUOTES, 'UTF-8') ?>);">Delete</button>
+                        <a href="<?php echo URL . 'products/editproduct/' . htmlspecialchars($product->id_product, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Sửa</a>
+                      <button class="btn btn-danger btn-xs" onclick="cfdelete(<?php echo htmlspecialchars($product->id_product, ENT_QUOTES, 'UTF-8') ?>);">Xóa</button>
                       
                     </td>
                 </tr> 

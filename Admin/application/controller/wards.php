@@ -8,8 +8,8 @@ class Wards extends Controller
 
     public function index()
     {
-        $wards = $this->model->getList($this->table_name);
-
+        $wards = $this->model->getListByLimit($this->table_name, 0);
+        $limit = 0;
         $provinces = array();
         $districts = array();
         foreach($wards as $ward){
@@ -23,6 +23,24 @@ class Wards extends Controller
         require APP . 'view/wards/index.php';
         require APP . 'view/_templates/footer.php';
     }
+
+    public function list($limit)
+    {
+        $limit = $limit - 1;
+        $wards = $this->model->getListByLimit($this->table_name, $limit);
+        $provinces = array();
+        $districts = array();
+        foreach($wards as $ward){
+            $province = $this->model->getListById("tbl_province", "id_province", $ward->id_province);
+            $district = $this->model->getListById("tbl_district", "id_district", $ward->id_district);
+            $provinces[] = $province[0];
+            $districts[] = $district[0];
+        }
+        $this->model->sessionStart();
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/wards/index.php';
+        require APP . 'view/_templates/footer.php';
+    }    
     public function addWard()
     {
         $this->setAdd();

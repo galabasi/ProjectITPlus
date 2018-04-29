@@ -21,7 +21,6 @@ CLass Login extends Controller{
 			// print_r($user);
 			if(isset($user[0])){
 				if($user[0]->mail_user != ""){
-					echo "GG";
 					if($user[0]->password == $password){
 						$_SESSION["isLogin"] = $user;
 						return header("location:".URL."home");

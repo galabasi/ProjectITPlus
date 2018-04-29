@@ -7,8 +7,8 @@
       <form class="form-horizontal" method="post">
         <div class="box-body">
           <div class="form-group">
-            <label for="id_province" class="col-sm-2 control-label">province</label>
-            <div class="col-sm-10">
+            <label for="id_province" class="col-sm-3 control-label">Tên quận/huyện</label>
+            <div class="col-sm-9">
                 <select class="form-control" id="id_province" name="id_province">
                   <option>---Chọn---</option>
                <?php  
@@ -22,23 +22,23 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="name_district" class="col-sm-2 control-label">name_district</label>
-            <div class="col-sm-10">
+            <label for="name_district" class="col-sm-3 control-label">Tên tỉnh/thành phố</label>
+            <div class="col-sm-9">
               <input class="form-control" id="name_district" name="name_district" type="text">
             </div>
           </div>
           <div class="form-group">
-            <label for="status" class="col-sm-2 control-label">status</label>
-            <div class="col-sm-10 checkbox">
+            <label for="status" class="col-sm-3 control-label">Trạng thái</label>
+            <div class="col-sm-9 checkbox">
               <input class="" id="status" name="status" type="checkbox" value="1" checked style="margin-left: 0px;">
             </div>
           </div>
         </div>        
         <div class="box-footer">
           <div class="pull-right">
-            <button type="Reset" class="btn btn-default">Reset</button>
+            <button type="Reset" class="btn btn-default">Đặt lại</button>
             <!-- <button type="submit" name="listU" id="listU" class="btn btn-default">List User</button> -->
-            <button type="submit" name="addNew" id="addNew" class="btn btn-info">Add New</button>
+            <button type="submit" name="addNew" id="addNew" class="btn btn-info">Thêm</button>
           </div>
         </div>
       </form>
