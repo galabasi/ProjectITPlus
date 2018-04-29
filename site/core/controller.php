@@ -11,6 +11,7 @@ class Controller
      * @var null Model
      */
     public $model = null;
+    public $url_active = array();
 
     /**
      * Whenever controller is created, open a database connection too and load "the model".
@@ -22,6 +23,7 @@ class Controller
         
         $this->openDatabaseConnection();
         $this->loadModel();
+        $this->loadActive();
     }
 
     /**
@@ -44,6 +46,11 @@ class Controller
      * Loads the "model".
      * @return object model
      */
+    public function loadActive(){
+      $url =  "{$_SERVER['REQUEST_URI']}";
+      $escaped_url = htmlspecialchars( $url, ENT_QUOTES, 'UTF-8' );
+      $this->url_active = explode("/",$url);
+    }
     public function loadModel()
     {
         /*$_SESSION['user'] = [];*/

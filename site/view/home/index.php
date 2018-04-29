@@ -94,7 +94,7 @@
                   ?>
                   <li class="span3">
                     <div class="thumbnail">
-                        <a class="zoomTool" href="productdetails?id=<?php echo $a->id_product; ?>" title="add to cart"><span class="icon-search"></span> Xem</a>
+                        <a class="zoomTool" href="productdetails?id=<?php echo $a->id_product; ?>" title="Xem sản phẩm"><span class="icon-search"></span> Xem</a>
                         <a href="#" class="tag"></a>
                         <a href=""><img src="<?=$a->url_image ?>" alt="bootstrap-ring"></a>
                     </div>
@@ -134,7 +134,7 @@
     Featured Products
     -->
         <div class="well well-small">
-          <h3><a class="btn btn-mini pull-right" href="shop" title="View more">Xem thêm<span class="icon-plus"></span></a> Sản phẩm nổi bật  </h3>
+          <h3><a class="btn btn-mini pull-right" href="shop" title="View more">Xem thêm <span class="icon-plus"></span></a> Sản phẩm nổi bật  </h3>
           <hr class="soften"/>
           <div class="row-fluid">
             <?php
@@ -147,12 +147,12 @@
               ?>
             <li class="span4">
               <div class="thumbnail">
-                <a class="zoomTool" href="productdetails?id=<?php echo $val->id_product;?>" title="add to cart"><span class="icon-search"></span> Xem</a>
+                <a class="zoomTool" href="productdetails?id=<?php echo $val->id_product;?>" title="Xem sản phẩm"><span class="icon-search"></span> Xem</a>
                 <a  href="productdetails?id=<?php echo $val->id_product;?>"><img src="<?=$val->url_image ?>" alt=""></a>
                 <div class="caption">
                   <h5><?php echo $val->name_product;?></h5>
                   <h4>
-                      <a class="shopBtn" href="javascript:void(0)" onclick="addCart(<?php echo $val->id_product ?>)" title="add to cart"><span class="icon-plus"></span>Thêm vào giỏ</a>
+                      <a class="shopBtn" href="javascript:void(0)" onclick="addCart(<?php echo $val->id_product ?>)" title="Thêm vào giỏ"><span class="icon-plus"></span> Thêm vào giỏ</a>
                       <span class="pull-right"><?php echo $val->price;?><sup>đ</sup></span>
                   </h4>
                 </div>

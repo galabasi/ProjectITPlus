@@ -50,4 +50,6 @@
 			</form>
 		</div>
 	</div>
+	<hr class="soften"/>
+	<br/>
 </div>

@@ -64,6 +64,7 @@
     $.confirm({
       title: "Xác nhận!",
       content: "Bạn có chắc chắn muốn xóa không?",
+      backgroundDismiss: true,
       buttons: {
         OK: function(){
               window.location.href="<?php echo URL . 'users/deleteUser/'?>"+id;

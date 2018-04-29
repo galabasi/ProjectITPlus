@@ -12,6 +12,7 @@
         <!-- font awesome styles -->
         <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
         <link rel="shortcut icon" href="ico/favicon.ico">
+        <link href="jquery-confirm/dist/jquery-confirm.min.css" type="text/css" rel="stylesheet"/>
         <!-- hàm php lấy view để set active cho các nút trong nav-bar-->
     </head>
     <body>	

@@ -1,6 +1,6 @@
  <div class="span9">
  	<ul class="breadcrumb">
- 		<li><a href="index.php">Trang chủ</a> <span class="divider">/</span></li>
+ 		<li><a href="home">Trang chủ</a> <span class="divider">/</span></li>
  		<li class="active">Đăng nhập</li>
  	</ul>
  	<h3>ĐĂNG NHẬP</h3>	

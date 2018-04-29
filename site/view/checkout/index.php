@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="span12">
 		<ul class="breadcrumb">
-			<li><a href="index.php">Trang chủ</a> <span class="divider">/</span></li>
+			<li><a href="home">Trang chủ</a> <span class="divider">/</span></li>
 			<li class="active">Thông tin thanh toán</li>
 		</ul>
 		<div class="well well-small" id="cartList">

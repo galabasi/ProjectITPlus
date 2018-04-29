@@ -61,12 +61,12 @@
 				<li class="span4">
 					<div class="thumbnail">
 						<a href="product_details.html" class="overlay"></a>
-						<a class="zoomTool" href="productdetails?id=<?php echo $val->id_product;?>" title="add to cart"><span class="icon-search"></span> Xem</a>
+						<a class="zoomTool" href="productdetails?id=<?php echo $val->id_product;?>" title="Xem sản phẩm"><span class="icon-search"></span> Xem</a>
 						<a href="productdetails?id=<?php echo $val->id_product;?>"><img src="<?php echo htmlspecialchars($val->url_image, ENT_QUOTES, 'UTF-8');?>" alt=""></a>
 						<div class="caption cntr">
 							<p><?php echo htmlspecialchars($val->name_product, ENT_QUOTES, 'UTF-8');?></p>
 							<p><strong> <?php echo htmlspecialchars($val->price, ENT_QUOTES, 'UTF-8');?><sup>đ</sup></strong></p>
-							<h4><a class="shopBtn" href="javascript:void(0)" onclick="addCart(<?php echo $val->id_product ?>)" title="add to cart"> Thêm vào giỏ </a></h4>
+							<h4><a class="shopBtn" href="javascript:void(0)" onclick="addCart(<?php echo $val->id_product ?>)" title="Thêm vào giỏ"><span class="icon-plus"></span> Thêm vào giỏ </a></h4>
 							
 						</div>
 					</div>

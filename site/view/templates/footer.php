@@ -30,6 +30,7 @@
 <script src="js/jquery.easing-1.3.min.js"></script>
 <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
 <script src="js/shop.js"></script>
+<script src="jquery-confirm/dist/jquery-confirm.min.js"></script>
 <script>  
 	function getList(id){
 		$.post('<?php echo URL."shop" ?>/getList', {'id': id}, function(data) {
@@ -86,8 +87,19 @@
 		});
 	}
 	function addCart(id){
-			$.post('<?php echo URL."cart/" ?>addCart', {'id': id}, function(data) {
-				alert("thêm giỏ hàng thành công");
+			$.post('<?php echo URL."cart/" ?>addCart', {'id': id}, function() {
+				$.confirm({
+					title: "Xác nhận",
+				    content: "Thêm vào giỏ hàng thành công",
+				    backgroundDismiss: true,
+				    boxWidth: '20%',
+    				useBootstrap: false,
+				    buttons: {
+				    	OK: function(){
+
+				        },
+				    }
+			    });
 			});
 		}
 </script>

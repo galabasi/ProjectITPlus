@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="span6">
 		<h1>
-			<a class="logo" href="index.php">
+			<a class="logo" href="home">
 				<img src="img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
 			</a>
 		</h1>

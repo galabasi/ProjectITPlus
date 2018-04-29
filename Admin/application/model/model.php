@@ -102,12 +102,13 @@ class Model
     public function sessionStart(){
         session_start();
         ob_start();
-        if(!isset($_SESSION["isLogin"])){
+        if(!isset($_SESSION['isLogin'])){
           header("location:".URL."login");
         }
     }
     public function Logout(){
         session_start();
+        setcookie('mail_user', "", time() - 3600, "/");
         session_unset(); 
         session_destroy();
     }

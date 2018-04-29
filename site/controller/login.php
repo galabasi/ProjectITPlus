@@ -6,7 +6,7 @@ class Login extends Controller
         $a = "";
         if(isset($_POST["login"])){
             $email = $_POST["email"];
-            $password = $_POST["password"];
+            $password = md5($_POST["password"]);
         if($email != "" && $password != ""){
             $login = $this->model->login($email,$password);
             if($login){
