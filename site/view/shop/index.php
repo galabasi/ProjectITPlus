@@ -45,7 +45,7 @@
     </div>
 <div class="span9">
 	<div class="well well-small">
-		<h3>Our Products </h3>
+		<h3>Sản phẩm </h3>
 		<div class="row-fluid" id="list">
 			<?php
 				$s = array_chunk($_SESSION['shop'], 3);

@@ -98,8 +98,8 @@
             </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="index.php?view=listImage">Danh sách</a></li>
-          <li><a href="index.php?view=addImage">Thêm mới</a></li>
+          <li><a href="<?php echo URL; ?>images">Danh sách</a></li>
+          <li><a href="<?php echo URL; ?>images/addimage">Thêm mới</a></li>
         </ul>
       </li>
 

@@ -37,6 +37,11 @@
 			$("#list").load("shop #list");
 		});
 	}
+	function shop(){
+		$.post('<?php echo URL."shop" ?>/unsetShop', {}, function(data) {
+			window.location.href = "<?php echo URL.'shop' ?>"
+		});
+	}
 	function isChecked(id){
 			if($("#"+id).is(':checked')){
 				userName = $("#userName").val();
@@ -94,9 +99,10 @@
 				    backgroundDismiss: true,
 				    boxWidth: '20%',
     				useBootstrap: false,
+    				autoClose: 'OK|3000',
 				    buttons: {
-				    	OK: function(){
-
+				    	OK: {
+				    		text: "OK",
 				        },
 				    }
 			    });
@@ -138,7 +144,7 @@
 			if($("#district_user").val() != ""){
 				getWard($("#district_user").val(), <?php echo $user[0]->ward_user ?>);
 			}
-		}();
+		}();	
 	});
 </script>
 </body>

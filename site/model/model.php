@@ -158,4 +158,13 @@ class Model
         $query->execute();
         return $query->fetchAll();
     }
+
+    public function searchItems($key_word){
+        $sql = "SELECT p.name_product,p.price,p.description,p.id_product,p.id_category,i.url_image, b.name_brand FROM tbl_product AS p, tbl_image as i, tbl_brand as b WHERE i.id_product = p.id_product AND p.id_brand = b.id_brand
+            AND (p.name_product LIKE '%$key_word%' OR b.name_brand LIKE '%$key_word%')";
+        // echo $sql;
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();
+    }
 }
