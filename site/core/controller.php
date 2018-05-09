@@ -12,20 +12,20 @@ class Controller
      */
     public $model = null;
     public $url_active = array();
+    public $num = 0;
 
     /**
      * Whenever controller is created, open a database connection too and load "the model".
      */
     function __construct()
     {
-        if(isset($_SESSION)){
-            session_start();
-        }
+        session_start();
         ob_start();
         
         $this->openDatabaseConnection();
         $this->loadModel();
         $this->loadActive();
+        $this->loadPage();
     }
 
     /**
@@ -59,5 +59,18 @@ class Controller
         require APP . 'model/model.php';
         // create new "model" (and pass the database connection)
         $this->model = new Model($this->db);
+    }
+    public function loadPage(){
+        $this->num = $this->model->loadNumCart();
+        if(isset($_POST['search'])){
+            if(isset($_POST['key-search'])){
+                if(isset($_SESSION['shop'])){
+                    unset($_SESSION['shop']);
+                }
+                // $_SESSION['isSearch'] = $_POST['search'];
+                $_SESSION['shop'] = $this->model->searchItems($_POST['key-search']);
+                header("location: ".URL."shop");
+            }
+        }
     }
 }

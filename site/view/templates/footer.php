@@ -64,6 +64,7 @@
 			$("#quantity_"+id).val(quantity);
 			$.post("<?php echo URL."cart/" ?>updateCart", {'id':id,'quantity':quantity}, function(data) {
 				$("#cartList").load("cart #cartList");
+				$("#cartBtn").load("home #cartNum");
 			});
 		}
 		function upItem(id){
@@ -77,7 +78,7 @@
 		function deleteItem(id){
 			$.post("<?php echo URL."cart/" ?>deleteCart", {'id':id}, function(data) {
 				$("#cartList").load("cart #cartList");
-				
+				$("#cartBtn").load("home #cartNum");
 			});
 		}
 	function getDistrict(id, tmp){
@@ -103,9 +104,11 @@
 				    buttons: {
 				    	OK: {
 				    		text: "OK",
+				    		
 				        },
 				    }
 			    });
+			    $("#cartBtn").load("home #cartNum");
 			});
 		}
 </script>

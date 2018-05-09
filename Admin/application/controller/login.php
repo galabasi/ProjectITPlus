@@ -5,8 +5,6 @@ CLass Login extends Controller{
     protected $key_word = "mail_user";
 
 	function index(){
-		session_start();
-        ob_start(); 
 	  	if(isset($_COOKIE['mail_user'])){
 	  		$_SESSION["isLogin"] =  $this->model->getListById($this->table_name, $this->key_word, $_COOKIE['mail_user']);
 	  		return header("location:".URL."home");

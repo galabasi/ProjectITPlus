@@ -167,4 +167,15 @@ class Model
         $query->execute();
         return $query->fetchAll();
     }
+    public function loadNumCart(){
+        $num = 0;
+        if(isset($_SESSION['cart'])){
+            $carts = $_SESSION['cart'];
+            $num=0;
+            foreach ($carts as $cart) {
+                $num++;
+            }
+        }
+        return $num;
+    }
 }
