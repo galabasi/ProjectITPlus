@@ -37,6 +37,11 @@
 			$("#list").load("shop #list");
 		});
 	}
+	function shop(){
+		$.post('<?php echo URL."shop" ?>/unsetShop', {}, function(data) {
+			window.location.href = "<?php echo URL.'shop' ?>"
+		});
+	}
 	function isChecked(id){
 			if($("#"+id).is(':checked')){
 				userName = $("#userName").val();
@@ -59,6 +64,7 @@
 			$("#quantity_"+id).val(quantity);
 			$.post("<?php echo URL."cart/" ?>updateCart", {'id':id,'quantity':quantity}, function(data) {
 				$("#cartList").load("cart #cartList");
+				$("#cartBtn").load("home #cartNum");
 			});
 		}
 		function upItem(id){
@@ -72,7 +78,7 @@
 		function deleteItem(id){
 			$.post("<?php echo URL."cart/" ?>deleteCart", {'id':id}, function(data) {
 				$("#cartList").load("cart #cartList");
-				
+				$("#cartBtn").load("home #cartNum");
 			});
 		}
 	function getDistrict(id, tmp){
@@ -94,12 +100,15 @@
 				    backgroundDismiss: true,
 				    boxWidth: '20%',
     				useBootstrap: false,
+    				autoClose: 'OK|3000',
 				    buttons: {
-				    	OK: function(){
-
+				    	OK: {
+				    		text: "OK",
+				    		
 				        },
 				    }
 			    });
+			    $("#cartBtn").load("home #cartNum");
 			});
 		}
 </script>
@@ -138,7 +147,7 @@
 			if($("#district_user").val() != ""){
 				getWard($("#district_user").val(), <?php echo $user[0]->ward_user ?>);
 			}
-		}();
+		}();	
 	});
 </script>
 </body>

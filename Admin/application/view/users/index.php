@@ -65,10 +65,16 @@
       title: "Xác nhận!",
       content: "Bạn có chắc chắn muốn xóa không?",
       backgroundDismiss: true,
+      type: 'red',
+      typeAnimated: false,
       buttons: {
-        OK: function(){
+        OK: {
+          btnClass: 'btn-red',
+          action: function(){
               window.location.href="<?php echo URL . 'users/deleteUser/'?>"+id;
-          },
+
+          }
+        },
         Hủy: function(){
 
         },

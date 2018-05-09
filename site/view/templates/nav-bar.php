@@ -9,12 +9,13 @@
 		  <div class="nav-collapse">
 				<ul class="nav">
 				 	<li  class="<?php if($this->url_active[2] == "" || $this->url_active[2] == "home") echo "active" ?>"><a href="home">Trang chủ</a></li>
-				 	<li  class="<?php if($this->url_active[2] == "shop") echo "active" ?>"><a href="shop">Cửa hàng</a></li>
+				 	<li  class="<?php if($this->url_active[2] == "shop") echo "active" ?>"><a href="javascript:void(0)" onclick = "shop()">Cửa hàng</a></li>
 					<li  class="<?php if($this->url_active[2] == "contact") echo "active" ?>"><a href="contact">Liên hệ với chúng tôi</a></li>
 				</ul>
-				<form action="#" class="navbar-search pull-left">
-				 	<input type="text" placeholder="Tìm kiếm" class="search-query span2" autofocus="true">
-				 	<input type="button" value="Tìm kiếm" class="btn-search btn" id="btn-search">
+				<form class="navbar-search pull-left" method="POST">
+				 	<input type="text" placeholder="Tìm kiếm" class="search-query span2" autofocus="true" name="key-search" id="key-search">
+				 	<button type="submit" class="btn-search btn" id="btn-search" name = "search" value="search">Tìm kiếm</button>
+				 	<!-- <input type="submit" value="Tìm Kiếm" class="btn-search btn" id="btn-search" name = "search"> -->
 				</form>
 				<ul class="nav pull-right">
 					<?php 

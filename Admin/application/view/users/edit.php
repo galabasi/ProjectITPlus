@@ -88,7 +88,6 @@
         <div class="box-footer">
           <div class="pull-right">
             <button type="Reset" class="btn btn-default">Đặt lại</button>
-            <!-- <button type="submit" name="listU" id="listU" class="btn btn-default">List User</button> -->
             <button type="submit" name="updateList" id="updateList" class="btn btn-info">Sửa</button>
           </div>
         </div>
