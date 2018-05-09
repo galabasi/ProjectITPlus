@@ -61,15 +61,16 @@ class Controller
         $this->model = new Model($this->db);
     }
     public function loadPage(){
-        $this->num = $this->model->loadNumCart();
-        if(isset($_POST['search'])){
-            if(isset($_POST['key-search'])){
-                if(isset($_SESSION['shop'])){
-                    unset($_SESSION['shop']);
+        if(!isset($this->url_active[2]) || strtolower($this->url_active[2]) != 'admin'){
+            $this->num = $this->model->loadNumCart();
+            if(isset($_POST['search'])){
+                if(isset($_POST['key-search'])){
+                    if(isset($_SESSION['shop'])){
+                        unset($_SESSION['shop']);
+                    }
+                    $_SESSION['shop'] = $this->model->searchItems($_POST['key-search']);
+                    header("location: ".URL."shop");
                 }
-                // $_SESSION['isSearch'] = $_POST['search'];
-                $_SESSION['shop'] = $this->model->searchItems($_POST['key-search']);
-                header("location: ".URL."shop");
             }
         }
     }
