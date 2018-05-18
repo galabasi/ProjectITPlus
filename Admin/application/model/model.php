@@ -33,9 +33,10 @@ class Model
 
     public function getListById($table, $key_word, $id)
     {
-        $sql = "SELECT * FROM $table WHERE $key_word = ?";
+        $sql = "SELECT * FROM $table WHERE $key_word = '$id'";
         $query = $this->db->prepare($sql);
-        $query->execute([$id]);
+        // echo $sql;
+        $query->execute();
         return $query->fetchAll();
     }
 
@@ -43,25 +44,23 @@ class Model
         if(is_array($data)){
             $field="";
             $val="";
-            $prepare = array();
-            $i = 0;
+            $i=0;
             foreach ($data as $key => $value) {
                 $i++;
                 if($key !="addNew"){
                     if($i==1){
                         $field .=$key;
-                        $val .=" ? ";
+                        $val .="'".$value."'";
                     }else{
                         $field .= ','.$key;
-                        $val .=", ? ";
+                        $val .=",'".$value."'";
                     }
-                    $prepare[] = $value;
                 }
             }
             $sql = "INSERT INTO ".$table." ($field) VALUES($val)";
+            // echo $sql;
             $query = $this->db->prepare($sql);
-            $query->execute($prepare);
-            unset($prepare);
+            $query->execute();
         }
     }
     public function updateList($table, $key_word, $id, $data){
@@ -69,7 +68,6 @@ class Model
             $val = "";
             $i = 0;
             $tmp = 1;
-            $prepare = array();
             foreach ($data as $key => $value) {
                 if($key != "updateList"){
                     $i++;
@@ -77,29 +75,28 @@ class Model
                         $tmp = 0;
                     }
                     if($i == 1){
-                        $val .= $key." = ? ";
+                        $val .= $key." = '".$value."'";
                     } else{
-                        $val .= ", ".$key." = ? ";
+                        $val .= ", ".$key." = '".$value."'";
                     }
-                    $prepare[] = $value;
                 }
             }
             if($tmp == 1){
                 $val .= ", status = '0'";
             }
         }
-        $prepare[] = ($id);
         $sql = "UPDATE $table";
         $sql .= " SET ".$val;
-        $sql .= " WHERE ".$key_word."= ?";
+        $sql .= " WHERE ".$key_word."= ".$id;
         $query = $this->db->prepare($sql);
-        $query->execute($prepare);
+        $query->execute();
     }
     public function deleteById($table, $key_word, $id)
     {
-        $sql = "DELETE FROM $table WHERE $key_word = ?";
+        $sql = "DELETE FROM $table WHERE $key_word = $id";
+        // echo $sql;
         $query = $this->db->prepare($sql);
-        $query->execute([$id]);
+        $query->execute();
     }
 
     public function sessionStart(){
