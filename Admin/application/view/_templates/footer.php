@@ -9,7 +9,6 @@
 <script src="<?php echo URL; ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="<?php echo URL; ?>dist/js/adminlte.min.js"></script>
 <script src="<?php echo URL; ?>jquery-ui/jquery-ui.js"></script>
-<script src="<?php echo URL; ?><?php echo URL; ?>tinymce/tinymce.min.js"></script>
 <script src="<?php echo URL; ?>js/main.js"></script>
 <script src="<?php echo URL; ?>jquery-confirm/dist/jquery-confirm.min.js"></script>
 <script>

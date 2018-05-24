@@ -102,6 +102,17 @@
           <li><a href="<?php echo URL; ?>images/addimage">Thêm mới</a></li>
         </ul>
       </li>
+      <li class="treeview <?php if($this->url_active[3] == "oders") echo "active"; ?>">
+        <a href=""><i class="fa fa-link"></i> <span>Đơn hàng</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo URL; ?>orders">Danh sách</a></li>
+          <!-- <li><a href="<?php echo URL; ?>images/addimage">Thêm mới</a></li> -->
+        </ul>
+      </li>
 
     </ul>
   </section>

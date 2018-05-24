@@ -94,12 +94,20 @@ class Model
         $sql .= " WHERE ".$key_word."= ?";
         $query = $this->db->prepare($sql);
         $query->execute($prepare);
+        unset($prepare);
     }
     public function deleteById($table, $key_word, $id)
     {
         $sql = "DELETE FROM $table WHERE $key_word = ?";
         $query = $this->db->prepare($sql);
         $query->execute([$id]);
+    }
+
+    public function getDetail($id){
+        $sql = "SELECT od.id_order,od.amount, od.price, p.id_product, p.name_product, p.description, c.name_category, b.name_brand FROM tbl_order_detail AS od , tbl_product AS p , tbl_category AS c , tbl_brand AS b WHERE od.id_product = p.id_product AND p.id_category = c.id_category AND p.id_brand = b.id_brand AND od.id_order = ?";
+        $query = $this->db->prepare($sql);
+        $query->execute([$id]);
+        return $query->fetchAll();
     }
 
     public function sessionStart(){

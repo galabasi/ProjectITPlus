@@ -30,17 +30,17 @@
                     <td><?php if (isset($image->url_image)) echo htmlspecialchars($image->url_image, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td>
                       <a id="zoom_img" href="javascript:void(0)" data-toggle="modal" data-target="#myModal-<?php echo $i ?>">
-                         <img src="<?php echo SITE.'public/'; if(isset($image->url_image)) echo htmlspecialchars($image->url_image, ENT_QUOTES, 'UTF-8'); ?>" alt="" width="100px" heigh="100px">
+                         <img src="<?php echo PJ.'public/'; if(isset($image->url_image)) echo htmlspecialchars($image->url_image, ENT_QUOTES, 'UTF-8'); ?>" alt="" width="100px" heigh="100px">
                         &nbsp&nbsp&nbsp&nbsp&nbsp<span class="glyphicon glyphicon-zoom-in"></span>
                       </a>
                       <div id="myModal-<?php echo $i ?>" class="modal fade" role="dialog"">
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-body" align="center">
-                              <img src="<?php echo SITE.'public/'; if(isset($image->url_image)) echo htmlspecialchars($image->url_image, ENT_QUOTES, 'UTF-8'); ?>" alt="" style = "max-width: 100%; height: auto;">
+                              <img src="<?php echo PJ.'public/'; if(isset($image->url_image)) echo htmlspecialchars($image->url_image, ENT_QUOTES, 'UTF-8'); ?>" alt="" style = "max-width: 100%; height: auto;">
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-default"><a href="<?php echo SITE.'public/'; if(isset($image->url_image)) echo htmlspecialchars($image->url_image, ENT_QUOTES, 'UTF-8'); ?>" target="_blank">Xem toàn ảnh</a></button>
+                              <button type="button" class="btn btn-default"><a href="<?php echo PJ.'public/'; if(isset($image->url_image)) echo htmlspecialchars($image->url_image, ENT_QUOTES, 'UTF-8'); ?>" target="_blank">Xem toàn ảnh</a></button>
                               <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                             </div>
                           </div>
