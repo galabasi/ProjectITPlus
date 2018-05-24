@@ -67,7 +67,7 @@
 				$("#cartBtn").load("home #cartNum");
 			});
 		}
-		function upItem(id){
+	function upItem(id){
 			quantity = $("#quantity_"+id).val();
 			quantity =   parseInt(quantity) + 1;
 			$("#quantity_"+id).val(quantity);
@@ -75,23 +75,12 @@
 				$("#cartList").load("cart #cartList");
 			});
 		}
-		function deleteItem(id){
+	function deleteItem(id){
 			$.post("<?php echo URL."cart/" ?>deleteCart", {'id':id}, function(data) {
 				$("#cartList").load("cart #cartList");
 				$("#cartBtn").load("home #cartNum");
 			});
 		}
-	function getDistrict(id, tmp){
-		$("#ward_user").html('<option value="">---Chọn---</option>');
-		$.post("<?php echo URL."register/" ?>getdistrict", {'id':id, 'tmp':tmp}, function(data) {
-			$("#district_user").html(data);
-		});
-	}
-	function getWard(id, tmp){
-		$.post('<?php echo URL."register/" ?>getward', {'id':id, 'tmp':tmp}, function(data) {
-			$("#ward_user").html(data);
-		});
-	}
 	function addCart(id){
 			$.post('<?php echo URL."cart/" ?>addCart', {'id': id}, function() {
 				$.confirm({
@@ -111,44 +100,6 @@
 			    $("#cartBtn").load("home #cartNum");
 			});
 		}
-</script>
-<script>
-	var myFunc = function() {
-		if($("#province_user").val() != ""){
-			getDistrict($("#province_user").val(), <?php echo $user[0]->district_user ?>);
-		}
-	}();
-</script>
-
-<!-- <script>
-    $(document).ready(function() {
-
-    $("#birthday").datepicker({
-      autoSize: true,
-      changeMonth: true,
-      changeYear: true,
-      dateFormat: "dd-mm-yy",
-      maxDate: 0,
-      minDate: new Date(1900, 1 - 1, 1),
-      yearRange: "1900:+nn",
-      dayNamesShort: [ "CN", "Hai", "Ba", "Tư", "Năm", "Sáu", "Bảy" ],
-      dayNamesMin: [ "CN", "Hai", "Ba", "Tư", "Năm", "Sáu", "Bảy" ],
-      monthNames: [ "Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12" ],
-      monthNamesShort: [ "Thg1", "Thg2", "Thg3", "Thg4", "Thg5", "Thg6", "Thg7", "Thg8", "Thg9", "Thg10", "Thg11", "Thg12" ],
-      defaultDate: new Date(2018, 1 - 1, 1),
-      firstDay: 1
-    }) ;
-  });
-</script> -->
-
-<script>
-	$(document).ready(function() {
-		var myFunc2 = function() {
-			if($("#district_user").val() != ""){
-				getWard($("#district_user").val(), <?php echo $user[0]->ward_user ?>);
-			}
-		}();	
-	});
 </script>
 </body>
 </html>
