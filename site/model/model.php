@@ -125,6 +125,13 @@ class Model
         $query->execute([$mail, $password]);
         return $query->fetchAll();
     }
+    public function getOrder($id)
+    {
+        $sql = "SELECT * FROM tbl_order WHERE id_user = $id ";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();
+    }
     public function getOne($table,$column,$value)
     {
         $sql = "SELECT * FROM $table WHERE $column = :value LIMIT 1";

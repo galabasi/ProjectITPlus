@@ -11,64 +11,65 @@
 		</ul>
 		<div class="well well-small" id="cartList">
 			<div class="well">
-		<form class="form-horizontal" >
-			<h3>Thông tin tài khoản</h3>
-			<div class="control-group">
-				<label class="control-label">Tên tài khoản</label>
-				<div class="control-label" style="">
-				  <b><?php echo($_SESSION['user']->name_user); ?></b>
-				</div>
+				<h3>Thông tin tài khoản</h3>
+				<table class="table">
+					<tr>
+						<td>Tên tài khoản</td>
+						<td><?php echo($_SESSION['user']->name_user); ?></td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td><?php echo($_SESSION['user']->mail_user); ?></td>
+					</tr>
+					<tr>
+						<td>Số điện thoại</td>
+						<td><?php echo($_SESSION['user']->phone_user); ?></td>
+					</tr>
+					<tr>
+						<td>Địa chỉ</td>
+						<td><?php 
+					  		echo($_SESSION['user']->address_user);
+					  		echo " ,<br> Xã: ". $ward->name_ward;
+					  		echo " ,<br> Quận/Huyện: ".$district->name_district; 
+					  		echo " ,<br> Tỉnh/Thành phố: ". $province->name_province;
+					   	?></td>
+					</tr>
+				</table>
 			</div>
-			<div class="control-group">
-				<label class="control-label">Gmail</label>
-				<div class="control-label">
-				  <b><?php echo($_SESSION['user']->mail_user); ?></b>
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label">Giới tính</label>
-				<div class="control-label">
-				  <b><?php echo($_SESSION['user']->gender); ?></b>
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label">Số điện thoại</label>
-				<div class="control-label">
-				  <b><?php echo($_SESSION['user']->phone_user); ?></b>
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label">Ngày sinh</label>
-				<div class="control-label">
-				  <b><?php echo($_SESSION['user']->birthday); ?></b>
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label">Tỉnh</label>
-				<div class="control-label">
-				  <b><?php echo($_SESSION['user']->province_user); ?></b>
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label">Huyện/Quận</label>
-				<div class="control-label">
-				  <b><?php echo($_SESSION['user']->district_user); ?></b>
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label">Xã/Phường</label>
-				<div class="control-label">
-				  <b><?php echo($_SESSION['user']->ward_user); ?></b>
-				</div>
-			</div>
-			<!-- <div class="control-group">
-				<div class="controls">
-				 <input type="submit" name="editAccount" value="Edit" class="exclusive shopBtn">
-				</div>
-			</div> -->
-		</form>
-</div>
-			
+		</div>
+	</div>
+	<div class="span12">
+		<div class="well">
+			<h3>Lịch sử mua hàng</h3>
+
+			<table class=" table table-hover">
+				<thead>
+					<tr>
+						<th>Mã đơn hàng</th>
+						<th>Tổng tiền</th>
+						<th>Người nhận</th>
+						<th>Địa chỉ nhận</th>
+						<th>Số điện thoại</th>
+						<th>Ngày đặt</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php  
+					foreach ($order as $key => $value) {
+					?>
+					<tr>
+						<td> <?php echo "#". $value->id_order; ?></td>
+						<td> <?php echo $value->total; ?></td>
+						<td> <?php echo $value->name_receiver; ?></td>
+						<td> <?php echo $value->address_receiver; ?></td>
+						<td> <?php echo $value->phone_receiver; ?></td>
+						<td> <?php echo $value->date_order; ?></td>
+					</tr>
+					
+				<?php } ?>
+				</tbody>
+
+			</table>
 		</div>
 	</div>
 </div>
