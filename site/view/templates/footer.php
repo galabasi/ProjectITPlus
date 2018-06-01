@@ -81,7 +81,17 @@
 				$("#cartBtn").load("home #cartNum");
 			});
 		}
-	function addCart(id){
+	function getDistrict(id, tmp){
+		$("#ward_user").html('<option value="">---Chọn---</option>');
+		$.post("<?php echo URL."register/" ?>getdistrict", {'id':id, 'tmp':tmp}, function(data) {
+			$("#district_user").html(data);
+		});
+	}
+	function getWard(id, tmp){
+		$.post('<?php echo URL."register/" ?>getward', {'id':id, 'tmp':tmp}, function(data) {
+			$("#ward_user").html(data);
+		});
+	}	function addCart(id){
 			$.post('<?php echo URL."cart/" ?>addCart', {'id': id}, function() {
 				$.confirm({
 					title: "Xác nhận",

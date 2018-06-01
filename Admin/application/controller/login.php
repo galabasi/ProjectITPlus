@@ -21,11 +21,13 @@ CLass Login extends Controller{
 			if(isset($user[0])){
 				if($user[0]->mail_user != ""){
 					if($user[0]->password == $password){
-						if(isset($_POST["remember"])){
-							setcookie('mail_user', $mail_user, time() + (86400 * 30), "/");
+						if($user[0]->role == "1"){
+							if(isset($_POST["remember"])){
+								setcookie('mail_user', $mail_user, time() + (86400 * 30), "/");
+							}
+							$_SESSION["isLogin"] = $user;
+							return header("location:".URL."home");
 						}
-						$_SESSION["isLogin"] = $user;
-						return header("location:".URL."home");
 					}
 				}
 			}

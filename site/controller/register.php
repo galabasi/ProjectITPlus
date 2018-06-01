@@ -8,6 +8,7 @@ class register extends Controller
 	protected $key = "id_province";
 	public function addUser(){
 		if(isset($_POST["addNew"])){
+            $_POST['password'] = md5($_POST['password']);
             $register = $this->model->addNew($this->table_name, $_POST);
             header("Location:".URL."/login");
 

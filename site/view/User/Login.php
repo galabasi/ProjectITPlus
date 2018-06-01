@@ -63,15 +63,15 @@
       <div class="well">
         <h5>CHƯA CÓ TÀI KHOẢN? ĐĂNG KÍ NGAY</h5><br/>
         Nhập email của bạn tại đây<br/><br/><br/>
-        <form>
+        <form method="POST">
           <div class="control-group">
-            <label class="control-label" for="inputEmail"> Địa chỉ E-mail</label>
+            <label class="control-label" for="inputEmail"> Địa chỉ Email</label>
             <div class="controls">
-              <input class="span3"  type="text" placeholder="Email">
+              <input class="span3"  type="text" placeholder="Email" name="inputEmail" id="inputEmail">
             </div>
           </div>
           <div class="controls">
-            <button type="submit" class="btn block">Tạo tài khoản</button>
+            <button type="submit" class="btn block" name="register" id="register">Tạo tài khoản</button>
           </div>
         </form>
       </div>
@@ -108,3 +108,11 @@
   </div>
  </div>
  </div>
+
+ <script type="text/javascript">
+   $(document).ready(function() {
+     $("#makeAccount").click(function(){
+
+     });
+   });
+ </script>

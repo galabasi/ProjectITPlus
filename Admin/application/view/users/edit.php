@@ -84,6 +84,13 @@
               <input class="" id="status" name="status" type="checkbox" value="1" <?php echo ($user[0]->status)?"checked":"" ?> style="margin-left: 0px;">
             </div>
           </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Vai trò</label>
+            <div class="col-sm-9">
+              <label class="radio-inline"><input type="radio" id="user" name="role" value="0" required = "true" <?php if($user[0]->role == "0" ) echo "checked='true'" ?>>Người dùng</label>
+              <label class="radio-inline"><input type="radio" id="admin" name="role" value="1" required = "true" <?php if($user[0]->role == "1" ) echo "checked='true'" ?>>Quản trị</label>
+            </div>
+          </div>
         </div>        
         <div class="box-footer">
           <div class="pull-right">

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-06-01 19:13:09
+Date: 2018-06-01 23:19:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -826,7 +826,7 @@ CREATE TABLE `tbl_order` (
   `phone_receiver` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id_order`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of tbl_order
@@ -836,6 +836,8 @@ INSERT INTO tbl_order VALUES ('5', '1', '395', '2018-05-24', 'taduyhieu', 'Hải
 INSERT INTO tbl_order VALUES ('6', '2', '1186', '2018-05-24', 'thang', 'Hải Dương, xã Trúc Bạch, huyện Ba Đình, tỉnh/thành phố Hà Nội', '0876543456', '0');
 INSERT INTO tbl_order VALUES ('8', '2', '311', '2018-05-24', 'thang', 'Hải Dương, xã Trúc Bạch, huyện Ba Đình, tỉnh/thành phố Hà Nội', '0876543456', '2');
 INSERT INTO tbl_order VALUES ('9', '5', '423', '2018-06-01', 'Thắng Chu', 'Xóm 9, Quang Yên, xã Nhật Quang, huyện Phù Cừ, tỉnh/thành phố Hưng Yên', '3125213123', '1');
+INSERT INTO tbl_order VALUES ('10', '6', '96', '2018-06-01', 'Nguyễn Văn An', '60 Nguyễn Trãi, xã Vũ Lăng, huyện Bắc Sơn, tỉnh/thành phố Lạng Sơn', '0123456789', '1');
+INSERT INTO tbl_order VALUES ('15', '6', '350', '2018-06-01', 'Nguyễn Văn An', '60 Nguyễn Trãi, xã Vũ Lăng, huyện Bắc Sơn, tỉnh/thành phố Lạng Sơn', '0123456789', '1');
 
 -- ----------------------------
 -- Table structure for `tbl_order_detail`
@@ -849,7 +851,7 @@ CREATE TABLE `tbl_order_detail` (
   `price` float(50,0) NOT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id_detail`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of tbl_order_detail
@@ -869,6 +871,9 @@ INSERT INTO tbl_order_detail VALUES ('16', '8', '13', '1', '223', '1');
 INSERT INTO tbl_order_detail VALUES ('17', '8', '20', '1', '12', '1');
 INSERT INTO tbl_order_detail VALUES ('18', '8', '10', '1', '76', '1');
 INSERT INTO tbl_order_detail VALUES ('19', '9', '1', '1', '423', '1');
+INSERT INTO tbl_order_detail VALUES ('20', '10', '16', '1', '12', '1');
+INSERT INTO tbl_order_detail VALUES ('21', '10', '6', '1', '84', '1');
+INSERT INTO tbl_order_detail VALUES ('25', '15', '2', '2', '175', '1');
 
 -- ----------------------------
 -- Table structure for `tbl_product`
@@ -1029,17 +1034,17 @@ CREATE TABLE `tbl_user` (
   `ward_user` int(11) NOT NULL,
   `status` int(5) NOT NULL,
   `role` int(11) NOT NULL,
-  `updated_at` date NOT NULL,
-  `created_at` date NOT NULL,
   PRIMARY KEY (`id_user`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of tbl_user
 -- ----------------------------
-INSERT INTO tbl_user VALUES ('1', 'taduyhieu', 'hieu@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '0876543456', '2000-02-01', 'Hải Dương', '1', '1', '4', '1', '1', '2018-02-27', '2018-02-26');
-INSERT INTO tbl_user VALUES ('2', 'thang', 'thang@gmail.com', 'd41d8cd98f00b204e9800998ecf8427e', '1', '0876543456', '2000-02-01', 'Hải Dương', '26', '246', '8845', '1', '1', '2018-02-27', '2018-02-26');
-INSERT INTO tbl_user VALUES ('5', 'admin', 'admin@admin.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '3125213123', '0000-00-00', 'Xóm 9, Quang Yên', '33', '333', '12415', '1', '1', '0000-00-00', '0000-00-00');
+INSERT INTO tbl_user VALUES ('1', 'Tạ Duy Hiếu', 'hieu@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '0876543456', '2000-02-01', 'Hải Dương', '1', '1', '4', '1', '0');
+INSERT INTO tbl_user VALUES ('2', 'thang', 'thang@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '0876543456', '2000-02-01', 'Hải Dương', '26', '246', '8845', '1', '0');
+INSERT INTO tbl_user VALUES ('5', 'admin', 'admin@admin.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '3125213123', '0000-00-00', 'Xóm 9, Quang Yên', '33', '333', '12415', '1', '1');
+INSERT INTO tbl_user VALUES ('6', 'Nguyễn Văn An', 'abc@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '1', '0123456789', '2004-10-23', '60 Nguyễn Trãi', '20', '185', '6367', '1', '0');
+INSERT INTO tbl_user VALUES ('7', 'Trần Thị Vân', 'bcd@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0', '0987625125', '1993-02-19', 'Số 5 Nguyễn Du', '92', '916', '31120', '1', '0');
 
 -- ----------------------------
 -- Table structure for `tbl_ward`

@@ -15,13 +15,11 @@
   function getDistrict(id, tmp, target){
     $("#ward_user").html('<option value="">---Chọn---</option>');
     $.post("<?php echo URL."users/" ?>getdistrict", {'id':id, 'tmp':tmp}, function(data) {
-      /*optional stuff to do after success */
       $("#"+target).html(data);
     });
   }
   function getWard(id, tmp, target){
     $.post('<?php echo URL."users/" ?>getward', {'id':id, 'tmp':tmp}, function(data) {
-      /*optional stuff to do after success */
       $("#"+target).html(data);
     });
   }

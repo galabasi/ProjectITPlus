@@ -21,6 +21,7 @@
                 <th>Quận/Huyện</th>
                 <th>Phường/Xã</th>
                 <th>Trạng thái</th>
+                <th>Vai trò</th>
                 <th>Hành động</th>
               </tr>
             </thead>
@@ -44,6 +45,7 @@
                   <td><?php if (isset($user->district_user)) echo htmlspecialchars($districts[$i]->name_district, ENT_QUOTES, 'UTF-8'); ?></td>
                   <td><?php if (isset($user->ward_user)) echo htmlspecialchars($wards[$i]->name_ward, ENT_QUOTES, 'UTF-8'); ?></td>
                   <td><?php if (isset($user->status)) echo $user->status?"Hiện":"Ẩn" ?></td>
+                  <td><?php if (isset($user->status)) echo $user->role?"Quản trị":"Nguời dùng" ?></td>
                   <td>
                     <a href="<?php echo URL . 'users/edituser/' . htmlspecialchars($user->id_user, ENT_QUOTES, 'UTF-8'); ?>" class="btn btn-primary btn-xs">Sửa</a>
                     <button class="btn btn-danger btn-xs" onclick="cfdelete(<?php echo htmlspecialchars($user->id_user, ENT_QUOTES, 'UTF-8') ?>);">Xóa</button>

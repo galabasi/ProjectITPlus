@@ -34,7 +34,7 @@
       <div class="control-group">
         <label class="control-label" for="mail_user">Email <sup>*</sup></label>
         <div class="controls">
-          <input type="text" id="mail_user" name="mail_user" placeholder="Email">
+          <input type="text" id="mail_user" name="mail_user" placeholder="Email" value="<?php if(isset($_SESSION['register_mail'])) echo $_SESSION['register_mail']; unset($_SESSION['register_mail']); ?>">
         </div>
       </div>    
       <div class="control-group">
@@ -75,6 +75,7 @@
             <option value="">Phường/Xã</option>
           </select> <br> <br>
           <input type="text" name="address_user" id="address_user" placeholder="Số nhà...">
+          <input type="hidden" name="status" id="status" value="1">
         </div>
       </div>
       <div class="control-group">

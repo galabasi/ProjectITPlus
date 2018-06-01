@@ -39,7 +39,8 @@
 					$this->addOrder();
 					$this->addOrderDetail();
 					unset($_SESSION['cart']);
-					echo "<script> alert('Chuyển tới trang thanh toán...'); </script>";
+					echo "<script> alert('Đặt hàng thành công!');
+					window.location.href = '".URL."account' </script>";
 				}
 			require APP . 'view/templates/header.php';
 			require APP . 'view/checkout/index.php';
