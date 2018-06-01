@@ -1,5 +1,5 @@
 <div class="well well-small">
-	<h1>Visit us</h1>
+	<h1>Liên hệ</h1>
 	<hr class="soften"/>	
 	<div class="row-fluid">
 		<div class="span8 relative">
@@ -9,13 +9,13 @@
 				<div class="well wellsmall">
 					<h4>Thông tin liên lạc</h4>
 					<h5>
-						1 Hoàng Đạo Thúy, <br>
+						Số 1 Hoàng Đạo Thúy, <br>
 						Hà Nội, Việt Nam<br/><br/>
 
 						info@mysite.com<br/>
 						﻿Tel 123-456-6780<br/>
 						Fax 123-456-5679<br/>
-						web:wwwmysitedomain.com
+						web: www.mysitedomain.com
 					</h5>
 				</div>
 			</div>

@@ -67,7 +67,7 @@ class Images extends Controller
                 }
             }
         }
-        header('location: ' . URL . 'images/index');
+        header('location: ' . URL . 'images');
       }
     }
 
@@ -91,7 +91,7 @@ class Images extends Controller
         if(isset($_POST["updateList"])){
             print_r($_POST);
             $this->model->updateList($this->table_name, $this->key_word, $id, $_POST);
-            header('location: ' . URL . 'images/index');
+            header('location: ' . URL . 'images');
         }
     } 
 
@@ -102,7 +102,7 @@ class Images extends Controller
             $this->model->deleteById($this->table_name, $this->key_word, $id);
         }
 
-        header('location: ' . URL . 'images/index');
+        header('location: ' . URL . 'images');
     }
 }
 ?>

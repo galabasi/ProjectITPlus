@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-05-24 15:52:21
+Date: 2018-06-01 18:23:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -782,7 +782,7 @@ CREATE TABLE `tbl_image` (
   `url_image` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id_image`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of tbl_image
@@ -808,6 +808,9 @@ INSERT INTO tbl_image VALUES ('18', '19', 'img/vongtay-1.jpg', '1');
 INSERT INTO tbl_image VALUES ('19', '20', 'img/vongtay-2.jpg', '1');
 INSERT INTO tbl_image VALUES ('20', '21', 'img/vongtay-3.jpg', '1');
 INSERT INTO tbl_image VALUES ('21', '6', 'img/casio-3.jpg', '1');
+INSERT INTO tbl_image VALUES ('22', '22', 'img/png4.jpg', '1');
+INSERT INTO tbl_image VALUES ('23', '23', 'img/png2.jpg', '1');
+INSERT INTO tbl_image VALUES ('24', '24', 'img/png1.jpg', '1');
 
 -- ----------------------------
 -- Table structure for `tbl_order`
@@ -823,7 +826,7 @@ CREATE TABLE `tbl_order` (
   `phone_receiver` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id_order`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of tbl_order
@@ -832,6 +835,7 @@ INSERT INTO tbl_order VALUES ('4', '5', '889', '2018-05-24', 'admin', 'Xóm 9, Q
 INSERT INTO tbl_order VALUES ('5', '1', '395', '2018-05-24', 'taduyhieu', 'Hải Dương, xã Trúc Bạch, huyện Ba Đình, tỉnh/thành phố Hà Nội', '0876543456', '3');
 INSERT INTO tbl_order VALUES ('6', '2', '1186', '2018-05-24', 'thang', 'Hải Dương, xã Trúc Bạch, huyện Ba Đình, tỉnh/thành phố Hà Nội', '0876543456', '0');
 INSERT INTO tbl_order VALUES ('8', '2', '311', '2018-05-24', 'thang', 'Hải Dương, xã Trúc Bạch, huyện Ba Đình, tỉnh/thành phố Hà Nội', '0876543456', '2');
+INSERT INTO tbl_order VALUES ('9', '5', '423', '2018-06-01', 'Thắng Chu', 'Xóm 9, Quang Yên, xã Nhật Quang, huyện Phù Cừ, tỉnh/thành phố Hưng Yên', '3125213123', '1');
 
 -- ----------------------------
 -- Table structure for `tbl_order_detail`
@@ -845,7 +849,7 @@ CREATE TABLE `tbl_order_detail` (
   `price` float(50,0) NOT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id_detail`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of tbl_order_detail
@@ -864,6 +868,7 @@ INSERT INTO tbl_order_detail VALUES ('15', '6', '4', '2', '225', '1');
 INSERT INTO tbl_order_detail VALUES ('16', '8', '13', '1', '223', '1');
 INSERT INTO tbl_order_detail VALUES ('17', '8', '20', '1', '12', '1');
 INSERT INTO tbl_order_detail VALUES ('18', '8', '10', '1', '76', '1');
+INSERT INTO tbl_order_detail VALUES ('19', '9', '1', '1', '423', '1');
 
 -- ----------------------------
 -- Table structure for `tbl_product`
@@ -879,7 +884,7 @@ CREATE TABLE `tbl_product` (
   `description` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `status` int(5) NOT NULL,
   PRIMARY KEY (`id_product`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of tbl_product
@@ -901,10 +906,13 @@ INSERT INTO tbl_product VALUES ('14', 'Khuyên tai bạc Thái', '4', '122', '0'
 INSERT INTO tbl_product VALUES ('15', 'Khuyên tai bạc Trung Quốc', '4', '43', '0', '5', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', '1');
 INSERT INTO tbl_product VALUES ('16', 'Nhẫn vàng 9999', '6', '12', '0', '6', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', '1');
 INSERT INTO tbl_product VALUES ('17', 'Nhẫn bạc ', '6', '543', '0', '6', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', '1');
-INSERT INTO tbl_product VALUES ('18', 'Nhẫn kim cương', '6', '23242', '0', '6', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', '1');
+INSERT INTO tbl_product VALUES ('18', 'Nhẫn kim cương', '6', '23', '0', '6', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', '1');
 INSERT INTO tbl_product VALUES ('19', 'Vòng tay đá cẩm thạch', '3', '211', '0', '7', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', '1');
 INSERT INTO tbl_product VALUES ('20', 'Vòng tay đá quý', '3', '12', '0', '7', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', '1');
 INSERT INTO tbl_product VALUES ('21', 'Vòng tay đính đá', '3', '344', '0', '7', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', '1');
+INSERT INTO tbl_product VALUES ('22', 'Khuyên tai thạch anh', '4', '22', '0', '1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', '1');
+INSERT INTO tbl_product VALUES ('23', 'Khuyên tai đá quý', '4', '22', '0', '4', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', '1');
+INSERT INTO tbl_product VALUES ('24', 'Vòng cổ đá quý', '7', '22', '0', '6', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has su', '1');
 
 -- ----------------------------
 -- Table structure for `tbl_province`

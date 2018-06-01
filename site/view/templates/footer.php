@@ -3,18 +3,18 @@
 		<div class="span2">
 			<h5>Tài khoản của bạn</h5>
 			<a href="#">Thông tin</a><br>
-			<a href="#">ORDER HISTORY</a><br>
+			<a href="#">Lịch sử mua hàng</a><br>
 		</div>
 		<div class="span2">
 			<h5>Về chúng tôi</h5>
 			<a href="<?php echo URL ?>contact">Liên hệ</a><br>
-			<a href="#">Bản đồ</a><br>
+			<a href="<?php echo URL ?>contact">Bản đồ</a><br>
 			<a href="#">Giấy phép hoạt động</a><br>
 		</div>
 		<div class="span2">
 			<h5>Gợi ý</h5>
-			<a href="#">Sản phẩm mới</a> <br>
-			<a href="#">Bán chạy</a><br>
+			<a href="<?php echo URL ?>shop">Sản phẩm mới</a> <br>
+			<a href="<?php echo URL ?>shop">Bán chạy</a><br>
 			<a href="#">Nhà cung cấp</a><br>
 		</div>
 		<div class="span6">

@@ -18,15 +18,16 @@
 				 	<!-- <input type="submit" value="Tìm Kiếm" class="btn-search btn" id="btn-search" name = "search"> -->
 				</form>
 				<ul class="nav pull-right">
+					<?php 
+						if(!isset($_SESSION['user'])){
+					?>
 					<li class=""><a  href="register"><span class="icon-user"></span> Đăng ký </a></li>
 					<li class="dropdown">
-						<?php 
-							if(!isset($_SESSION['user'])){
-						?>
 						<a  href="login"><span class="icon-lock"></span> Đăng nhập </a>
 						<?php }else {?>
-								<!-- <a  class="" href="profile"><span class="icon-lock"></span> Cá nhân </a> -->
-								<a  class="" href="logout"><span class="icon-lock"></span> Đăng xuất </a>
+								<li class=""><a  href="account"><span class="icon-user"></span> Tài khoản </a></li>
+							<li class="dropdown">
+								<a  href="logout" name="logout"><span class="icon-lock"></span> Đăng xuất </a>
 							<?php } ?>
 					</li>
 				</ul>

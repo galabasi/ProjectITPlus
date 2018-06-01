@@ -21,24 +21,21 @@
             <ul class="nav nav-list promowrapper">
             <li>
               <div class="thumbnail">
-                <a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+                <a class="zoomTool" href="productdetails?id=22" title="add to cart"><span class="icon-search"></span> Xem ngay</a>
                 <img src="img/png4.png" alt="bootstrap ecommerce templates">
                 <div class="caption">
-                  <h4><a class="defaultBtn" href="product_details.html">VIEW</a> <span class="pull-right">$22.00</span></h4>
+                  <h4><a class="defaultBtn" href="productdetails?id=22">XEM</a> <span class="pull-right">22<sup>đ</sup></span></h4>
                 </div>
               </div>
             </li>
             <li style="border:0"> &nbsp;</li>
-           
-           
-            
           </ul>
 
     </div>
 
 <div class="span9">
 	<ul class="breadcrumb">
-		<li><a href="index.php">Trang chủ</a> <span class="divider">/</span></li>
+		<li><a href="<?php echo URL."home" ?>">Trang chủ</a> <span class="divider">/</span></li>
 		<li><a href="shop">Sản phẩm</a> <span class="divider">/</span></li>
 		<li class="active">Xem hàng</li>
 	</ul>	
