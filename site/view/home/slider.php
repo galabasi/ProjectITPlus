@@ -1,4 +1,4 @@
-<!-- <div class="span9">
+<div class="span9">
   <div class="well np">
     <div id="myCarousel" class="carousel slide homCar">
       <div class="carousel-inner">
@@ -19,4 +19,3 @@
     </div>
   </div>
 
- -->
